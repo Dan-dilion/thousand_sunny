@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
+import {ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import App from './App';
+
+import './index.css';
+import theme from './styling/muiTheme.js';
+import { App } from './App';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <Router basename={process.env.PUBLIC_URL}>
-    <CssBaseline />
-    <App />
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </MuiThemeProvider>
   </Router>,
   document.getElementById('root')
 );

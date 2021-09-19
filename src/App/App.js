@@ -1,45 +1,68 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { Container, Paper, Button, Typography, Zoom } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/styles';
 import { Transition } from 'react-transition-group';
+
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { transitions, commonStyle } from '../styling/transitions.js';
 
 // import logo from './logo.svg';
 // import './App.css';
 
-function App() {
-  const [ isMounted, setIsMounted ] = useState(false);
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    margin: 0,
+    padding: 0,
+  },
+  main: {
+    [theme.breakpoints.down('sm')]: {
+      width: '95%',
+      marginX: '2.5%'
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      width: '90%'
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      width: '80%'
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '70%'
+    },
+    margin: '50px auto',
+    padding: '0',
+    background: 'white',
+    // border: '1px solid red',
 
-  const duration = 1000;
-
-  const defaultStyle = {
-    position: "relative",
-    transition: `opacity ${duration}ms ease-out, transform ${duration}ms ease-out, left ${duration}ms ease-out, top ${duration}ms ease-out`,
-    opacity: 0,
   }
+}))
 
-  const transitionLeft = {
-    entering: { opacity: 1, transform: "scale(0.99)", left: "2vw", top: ".5vw"},
-    entered:  { opacity: 1, transform: "scale(1)", left: 0, top: 0},
-    exiting:  { opacity: 0, transform: "scale(1)", left: 0, top: 0},
-    exited:  { opacity: 0, transform: "scale(0.99)", left: "-2vw", top: ".5vw"},
-  };
+export const App = () => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [ isHeaderMounted, setIsHeaderMounted ] = useState(false);
 
-  const handleClick = () => {
-    setIsMounted(prev => !prev)
-  }
+  console.log('The theme: ', theme);
+
+  useEffect( () => {
+    setIsHeaderMounted(true)
+  }, []);
 
   return (
-    <Container>
-      <Button onClick={handleClick}>click me</Button>
-      <Transition in={isMounted} timeout={0}>
-        {state => (
-          <Paper style={{...defaultStyle, ...transitionLeft[state]}}>
-            <Typography component="h1">Hello!</Typography>
-          </Paper>
-        )}
-      </Transition>
+    <Container className={classes.root} maxWidth={false}>
+      <Container className={classes.main}>
+        <Header isHeaderMounted={isHeaderMounted} />
+      
+        <Route
+          exact path={['/', '/Home']}
+        >
+          <h1>hello</h1>
+        </Route>
+
+      </Container>
+      <Footer />
     </Container>
   );
 }
-
-export default App;
