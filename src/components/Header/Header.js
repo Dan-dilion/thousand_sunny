@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Tabs, Tab, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Transition } from 'react-transition-group';
 
-import { transitions, commonStyle } from '../../styling/transitions.js';
-
-import {ReactComponent as Logo} from '../../global_assets/logo.svg';
+import { ReactComponent as Logo } from '../../global_assets/logo.svg';
+import Animate from '../Animate/';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -81,37 +79,29 @@ const Header = (props) => {
 
   return(
     <Container className={classes.root}>
-      <Transition in={props.isHeaderMounted} timeout={0}>
-        {state => (
-          <div style={{...commonStyle, ...transitions.top[state]}}>
-            <Logo className={classes.logo}/>
-          </div>
-        )}
-      </Transition>
-      <Transition in={props.isHeaderMounted} timeout={0}>
-        {state => (
-          <div style={{...commonStyle, ...transitions.bottom[state]}}>
-            <Container className={classes.menuBar}>
-              <Container className={classes.tabContainer}>
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  indicatorColor="secondary"
-                >
-                  <Tab className={classes.tab} component={ Link } to="/Home" label='Home' />
-                  <Tab className={classes.tab} component={ Link } to="/Destinations" label='Destinations' />
-                  <Tab className={classes.tab} component={ Link } to="/About" label='About' />
-                  <Tab className={classes.tab} component={ Link } to="/Partner" label='Partner' />
-                </Tabs>
-              </Container>
-              <Container className={classes.buttonContainer}>
-                <Button className={classes.buttons} variant="outlined" color="primary">Login</Button>
-                <Button className={classes.buttons} variant="contained" color="primary" disableElevation={true}>Register</Button>
-              </Container>
-            </Container>
-          </div>
-        )}
-      </Transition>
+      <Animate isMounted={props.isHeaderMounted} type="top">
+        <Logo className={classes.logo}/>
+      </Animate>
+      <Animate isMounted={props.isHeaderMounted} type="bottom">
+        <Container className={classes.menuBar}>
+          <Container className={classes.tabContainer}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="secondary"
+            >
+              <Tab className={classes.tab} component={ Link } to="/Home" label='Home' />
+              <Tab className={classes.tab} component={ Link } to="/Destinations" label='Destinations' />
+              <Tab className={classes.tab} component={ Link } to="/About" label='About' />
+              <Tab className={classes.tab} component={ Link } to="/Partner" label='Partner' />
+            </Tabs>
+          </Container>
+          <Container className={classes.buttonContainer}>
+            <Button className={classes.buttons} variant="outlined" color="primary">Login</Button>
+            <Button className={classes.buttons} variant="contained" color="primary" disableElevation={true}>Register</Button>
+          </Container>
+        </Container>
+      </Animate>
     </Container>
   )
 
