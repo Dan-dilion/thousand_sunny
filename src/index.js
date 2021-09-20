@@ -5,6 +5,7 @@ import {ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import './index.css';
+import '@fontsource/roboto';
 import theme from './styling/muiTheme.js';
 import { App } from './App';
 // import reportWebVitals from './reportWebVitals';

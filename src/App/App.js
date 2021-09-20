@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { Container, Paper, Button, Typography, Zoom } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { Transition } from 'react-transition-group';
 
 import Header from '../components/Header';
@@ -14,13 +14,13 @@ import { transitions, commonStyle } from '../styling/transitions.js';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    minHeight: '100vh',
     margin: 0,
     padding: 0,
   },
   main: {
     [theme.breakpoints.down('sm')]: {
       width: '95%',
-      marginX: '2.5%'
     },
     [theme.breakpoints.between('sm', 'md')]: {
       width: '90%'
@@ -31,8 +31,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('lg')]: {
       width: '70%'
     },
-    margin: '50px auto',
-    padding: '0',
+    margin: '0 auto',
+    padding: 0,
+    paddingTop: '50px',
     background: 'white',
     // border: '1px solid red',
 
@@ -41,10 +42,7 @@ const useStyles = makeStyles(theme => ({
 
 export const App = () => {
   const classes = useStyles();
-  const theme = useTheme();
   const [ isHeaderMounted, setIsHeaderMounted ] = useState(false);
-
-  console.log('The theme: ', theme);
 
   useEffect( () => {
     setIsHeaderMounted(true)
@@ -54,7 +52,7 @@ export const App = () => {
     <Container className={classes.root} maxWidth={false}>
       <Container className={classes.main}>
         <Header isHeaderMounted={isHeaderMounted} />
-      
+
         <Route
           exact path={['/', '/Home']}
         >
