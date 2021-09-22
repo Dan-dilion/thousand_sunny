@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Animate from '../Animate/';
 
-import { default as Backdrop } from './new_way_assets/new_way_graphic.svg';
+import { default as Backdrop } from './assets/new_way_graphic.svg';
 import { default as Cross } from '../../global_assets/cross_no_slant.svg';
 import { default as Circle } from '../../global_assets/circle_small.svg';
 
@@ -44,13 +44,13 @@ const useStyles = makeStyles(theme => ({
     // border: '2px solid orange',
     alignItems: 'start',
     width: '100%',
-    height: '100%',
     padding: '10% 0',
     paddingLeft: '1em',
     zIndex: 1,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       position: 'absolute',
       paddingLeft: 0,
+      height: '100%',
     }
   },
   rightPanel: {
@@ -96,7 +96,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.between('sm','md')]: {
       fontSize: '.7rem'
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: '.9rem'
+    },
+    [theme.breakpoints.up('lg')]: {
       fontSize: "1.2rem"
     },
   },

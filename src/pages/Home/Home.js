@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import ExploreAndTravel from '../../components/ExploreAndTravel';
 import NewWayToExplore from '../../components/NewWayToExplore';
+import FeaturedDestinations from '../../components/FeaturedDestinations';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,6 +26,9 @@ const useStyles = makeStyles(theme => ({
   },
   NewWayToExplore: {
 
+  },
+  FeaturedDestinations: {
+
   }
 }))
 
@@ -35,6 +39,7 @@ const Home = (props) => {
     <Container className={classes.root}>
       <ExploreAndTravel className={classes.ExploreAndTravel} isHomeMounted={props.isHomeMounted} />
       <NewWayToExplore className={classes.NewWayToExplore} isNewWayToExploreMounted={props.isHomeMounted} />
+      <FeaturedDestinations className={classes.FeaturedDestinations} isFeaturedDestinationsMounted={props.isHomeMounted} setHeaderPosition={props.setHeaderPosition} />
     </Container>
   )
 }

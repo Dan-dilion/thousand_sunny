@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Tabs, Tab, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -71,11 +71,10 @@ const useStyles = makeStyles(theme => ({
 const Header = (props) => {
   const classes = useStyles();
 
-  const [value, setValue] = useState(0);
-
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    props.setHeaderPosition(newValue);
   };
+
 
   return(
     <Container className={classes.root}>
@@ -86,7 +85,7 @@ const Header = (props) => {
         <Container className={classes.menuBar}>
           <Container className={classes.tabContainer}>
             <Tabs
-              value={value}
+              value={props.headerSelection}
               onChange={handleChange}
               indicatorColor="secondary"
             >

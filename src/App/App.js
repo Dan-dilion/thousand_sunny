@@ -44,23 +44,31 @@ const useStyles = makeStyles(theme => ({
 
 export const App = () => {
   const classes = useStyles();
+  const [ headerSelection, setHeaderSelection ] = useState(null);
   const [ isHeaderMounted, setIsHeaderMounted ] = useState(false);
   const [ isHomeMounted, setIsHomeMounted ] = useState(false);
 
   useEffect( () => {
-    setIsHeaderMounted(true)
-    setIsHomeMounted(true)
+    setIsHeaderMounted(true);
+    setIsHomeMounted(true);
+    setTimeout(() => {        // Prevent selection underline position being set
+      setHeaderSelection(0)     // wonky during transitioning
+    }, 1000);
   }, []);
 
   return (
     <Container className={classes.root} maxWidth={false}>
       <Container className={classes.main}>
-        <Header isHeaderMounted={isHeaderMounted} />
+        <Header
+          isHeaderMounted={isHeaderMounted}
+          headerSelection={headerSelection}
+          setHeaderPosition={setHeaderSelection}
+        />
 
         <Route
           exact path={['/', '/Home']}
         >
-          <Home isHomeMounted={isHomeMounted} />
+          <Home isHomeMounted={isHomeMounted} setHeaderPosition={setHeaderSelection} />
         </Route>
       </Container>
 
