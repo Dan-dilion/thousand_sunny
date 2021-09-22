@@ -19,6 +19,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-evenly',
   },
+  toplineWrapper: {
+    zIndex: 1
+  },
   topLine: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -41,11 +44,15 @@ const useStyles = makeStyles(theme => ({
     },
   },
   ViewAll: {
+    position: 'relative',
+    zIndex: 1,
     color: theme.palette.primary.main,
     minWidth: '5em',
+    textDecoration: 'none'
   },
   imagesContainer: {
     // border: '2px solid red',
+    zIndex: 1,
     display: 'flex',
     justifyContent: 'space-between',
     padding: 0,
@@ -78,6 +85,7 @@ const useStyles = makeStyles(theme => ({
   },
   decalContainer: {
     // border: '2px solid purple',
+    zIndex: 0,
     position: 'absolute',
     height: '100%',
     width: '100%'
@@ -119,16 +127,18 @@ const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}
 
   return(
     <Container className={classes.root}>
-      <Animate isMounted={isFeaturedDestinationsMounted} type="top" delay={0}>
-        <Container className={classes.topLine}>
-          <Typography className={classes.title}>
-            Featured Destinations
-          </Typography>
-          <Typography className={classes.ViewAll} component={Link} to="/Destinations" onClick={() => setHeaderPosition(1)}>
-            ViewAll >
-          </Typography>
-        </Container>
-      </Animate>
+      <div className={classes.toplineWrapper}>
+        <Animate isMounted={isFeaturedDestinationsMounted} type="top" delay={0}>
+          <Container className={classes.topLine}>
+            <Typography className={classes.title}>
+              Featured Destinations
+            </Typography>
+            <Typography className={classes.ViewAll} component={Link} to="/Destinations" onClick={() => setHeaderPosition(1)}>
+              ViewAll >
+            </Typography>
+          </Container>
+        </Animate>
+      </div>
 
       <Container className={classes.imagesContainer}>
         <Container className={classes.topImages}>
