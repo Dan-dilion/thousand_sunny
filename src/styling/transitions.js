@@ -4,6 +4,7 @@ export const commonStyle = {
   position: 'relative',
   padding: 0,
   margin: 0,
+  height: '100%',
   transition: `
     opacity ${duration * 3}ms ease-out,
     transform ${duration}ms ease-out,
@@ -33,5 +34,17 @@ export const transitions = {
     entered:  { opacity: 1, transform: 'scale(1)', left: 0, top: 0},
     exiting:  { opacity: 0, transform: 'scale(1)', left: 0, top: 0},
     exited:  { opacity: 0, transform: 'scale(0.8)', left: '-2vw', top: '.5vw'},
+  },
+  right: {
+    entering: { opacity: 1, transform: 'scale(0.8)', right: '2vw', bottom: '.5vw'},
+    entered:  { opacity: 1, transform: 'scale(1)', right: 0, bottom: 0},
+    exiting:  { opacity: 0, transform: 'scale(1)', right: 0, bottom: 0},
+    exited:  { opacity: 0, transform: 'scale(0.8)', right: '-2vw', bottom: '.5vw'},
+  },
+  fade: {
+    entering: { opacity: 1 },
+    entered:  { opacity: 1 },
+    exiting:  { opacity: 0 },
+    exited:  { opacity: 0 },
   }
 };

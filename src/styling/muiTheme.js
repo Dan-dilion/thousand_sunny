@@ -3,7 +3,7 @@ import { createTheme } from '@material-ui/core/styles';
 const theme = createTheme({
   breakpoints: {
     values: {
-      // superSmall: 375,
+      superSmall: 375,
       xs: 400,
       sm: 600,
       md: 960,
@@ -34,6 +34,7 @@ const theme = createTheme({
     MuiButton: {
       outlinedPrimary: {
         border: '1px solid',
+        fontWeight: '600',
         borderRadius: '6px',
         '&:hover': {
           border: '1px solid'
@@ -41,6 +42,8 @@ const theme = createTheme({
       },
       containedPrimary: {
         borderRadius: '6px',
+        color: 'white',
+        fontWeight: '600'
       }
     }
   },

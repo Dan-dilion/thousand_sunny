@@ -11,7 +11,7 @@ import { ReactComponent as YouTube } from '../../global_assets/youtube_icon.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    position: 'absolute',
+    position: 'relative',
     bottom: '0',
     width: '100%',
     [theme.breakpoints.down('sm')]: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
       height: '400px',
     },
     padding: 0,
-    backgroundColor: theme.palette.grey['200']
+    backgroundColor: theme.palette.grey['100']
   },
   container: {
     [theme.breakpoints.down('sm')]: {
@@ -116,6 +116,7 @@ const Footer = () => {
   const classes = useStyles();
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down('sm'), {noSsr: true});
+  const isMedium = useMediaQuery(theme.breakpoints.between('sm', 'md'), {noSsr: true});
 
   console.log('The theme: ', theme);
 
@@ -125,7 +126,7 @@ const Footer = () => {
     <Container className={classes.root} maxWidth={false}>
       <Container className={classes.container}>
         <Grid className={classes.gridContainer} container spacing={isSmall ? 2 : 10}>
-          <Grid item xs={4}>
+          <Grid item xs={isSmall ? 5 : isMedium ? 4 : 3}>
             <Paper className={classes.column} elevation={0}>
               <Logo />
               <Typography className={classes.textSize}>
