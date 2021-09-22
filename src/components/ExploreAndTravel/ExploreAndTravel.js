@@ -33,7 +33,6 @@ const useStyles = makeStyles(theme => ({
   },
   leftPanelWrapper: {
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      position: 'absolute',
       width: '80%'
     },
 
@@ -60,6 +59,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '600',
     width: '80%',
     maxWidth: '6em',
+    minWidth: '225px',
     marginBottom: '3%',
     lineHeight: 1,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
@@ -68,10 +68,11 @@ const useStyles = makeStyles(theme => ({
       maxWidth: '100%',
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '2.6rem'
+      fontSize: '2.6rem',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: theme.typography.h2.fontSize
+      fontSize: theme.typography.h2.fontSize,
+      minWidth: '325px',
     },
   },
   subHeading: {
@@ -111,6 +112,7 @@ const useStyles = makeStyles(theme => ({
   selectorsControl: {
     // border: '2px solid green',
     width: '30%',
+    minWidth: '90px',
     marginRight: '3%',
   },
   selectorLabel: {
@@ -136,6 +138,9 @@ const useStyles = makeStyles(theme => ({
   },
   rightPanel: {
     // border: '2px solid blue',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      position: 'absolute',
+    },
     height: '100%',
     width: '100%',
     padding: 0,
@@ -159,7 +164,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     height: '2.5vw',
     top: '5%',
-    left: '40%',
+    left: '42%',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       opacity: .7,
       top: '10%',
@@ -169,8 +174,8 @@ const useStyles = makeStyles(theme => ({
   circleSmall: {
     position: 'absolute',
     height: '2vw',
-    top: '100%',
-    left: '50%',
+    top: '90%',
+    left: '45%',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       opacity: .7,
       top: '85%',

@@ -2,6 +2,7 @@ import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ExploreAndTravel from '../../components/ExploreAndTravel';
+import NewWayToExplore from '../../components/NewWayToExplore';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles(theme => ({
   },
   ExploreAndTravel: {
     // minHeight: '370px',
+  },
+  NewWayToExplore: {
+
   }
 }))
 
@@ -30,6 +34,7 @@ const Home = (props) => {
   return(
     <Container className={classes.root}>
       <ExploreAndTravel className={classes.ExploreAndTravel} isHomeMounted={props.isHomeMounted} />
+      <NewWayToExplore className={classes.NewWayToExplore} isNewWayToExploreMounted={props.isHomeMounted} />
     </Container>
   )
 }
