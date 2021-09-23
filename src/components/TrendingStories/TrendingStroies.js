@@ -133,7 +133,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const TrendingStories = ({isTrendingStoriesMounted}) => {
+const TrendingStories = ({isVisible}) => {
   const classes = useStyles();
 
   const handleLink = (event) => {
@@ -143,7 +143,7 @@ const TrendingStories = ({isTrendingStoriesMounted}) => {
   return(
     <Container className={classes.root}>
       <div className={classes.toplineWrapper}>
-        <Animate isMounted={isTrendingStoriesMounted} type="top" delay={0}>
+        <Animate isMounted={isVisible} type="top" delay={0}>
           <Container className={classes.topLine}>
             <Typography className={classes.title}>
               Trending Stories
@@ -157,7 +157,7 @@ const TrendingStories = ({isTrendingStoriesMounted}) => {
 
       <Container className={classes.imagesContainer}>
         <Container className={classes.topImages}>
-          <Animate isMounted={isTrendingStoriesMounted} type="left" delay={200}>
+          <Animate isMounted={isVisible} type="left" delay={200}>
             <StoryCard
               className={classes.storyCard}
               image={HealingHoliday}
@@ -166,7 +166,7 @@ const TrendingStories = ({isTrendingStoriesMounted}) => {
               text="‘Helaing holidays’ are on the rise to help maximise your health and happines..."
             />
           </Animate>
-          <Animate isMounted={isTrendingStoriesMounted} type="top" delay={400}>
+          <Animate isMounted={isVisible} type="top" delay={400}>
             <StoryCard
               className={classes.storyCard}
               image={KyotoResturant}
@@ -178,7 +178,7 @@ const TrendingStories = ({isTrendingStoriesMounted}) => {
         </Container>
 
         <Container className={classes.bottomImages}>
-          <Animate isMounted={isTrendingStoriesMounted} type="bottom" delay={800}>
+          <Animate isMounted={isVisible} type="bottom" delay={800}>
             <StoryCard
               className={classes.storyCard}
               image={Yucatan}
@@ -187,7 +187,7 @@ const TrendingStories = ({isTrendingStoriesMounted}) => {
               text="It’s remote and challenging to get, but braving the jungle and exploring these ruins without the..."
             />
           </Animate>
-          <Animate isMounted={isTrendingStoriesMounted} type="right" delay={1000}>
+          <Animate isMounted={isVisible} type="right" delay={1000}>
             <StoryCard
               className={classes.storyCard}
               image={SurfsUp}
@@ -200,7 +200,7 @@ const TrendingStories = ({isTrendingStoriesMounted}) => {
       </Container>
 
       <Container className={classes.decalContainer}>
-        <Animate isMounted={isTrendingStoriesMounted} type="fade" delay={1400}>
+        <Animate isMounted={isVisible} type="fade" delay={1400}>
           <img className={classes.cross} src={Cross} alt="Cross" />
           <img className={classes.circle1} src={Circle} alt="Circle1" />
           <img className={classes.circle2} src={Circle} alt="Circle2" />

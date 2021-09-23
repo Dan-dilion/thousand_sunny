@@ -49,36 +49,32 @@ const useStyles = makeStyles(theme => ({
 const Home = (props) => {
   const classes = useStyles();
 
-  const [ isNewWayToExploreMounted, setIsNewWayToExploreMounted ] = useState(0);
-  const [ isFeaturedDestinationsMounted, setIsFeaturedDestinationsMounted ] = useState(0);
-  const [ isGuidesByThousandMounted, setIsGuidesByThousandMounted ] = useState(0);
-  const [ isTestimonialsMounted, setIsTestimonialsMounted ] = useState(0);
-  const [ isTrendingStoriesMounted, setIsTrendingStoriesMounted ] = useState(0);
-
-  const VISIBILITY_OFFSET = 300;
+  const VISIBILITY_OFFSET = 600;
 
   return(
     <Container className={classes.root}>
-      <ExploreAndTravel className={classes.ExploreAndTravel} isHomeMounted={props.isHomeMounted} />
-
-      <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <NewWayToExplore className={classes.NewWayToExplore} isNewWayToExploreMounted={isVisible} /> }
+      <TrackVisibility partialVisibility>
+        {({ isVisible }) => <ExploreAndTravel className={classes.ExploreAndTravel} isVisible={isVisible} /> }
       </TrackVisibility>
 
       <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <FeaturedDestinations className={classes.FeaturedDestinations} isFeaturedDestinationsMounted={isVisible} setHeaderPosition={props.setHeaderPosition} /> }
+        {({ isVisible }) => <NewWayToExplore className={classes.NewWayToExplore} isVisible={isVisible} /> }
       </TrackVisibility>
 
-      <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <GuidesByThousand className={classes.GuidesByThousand} isGuidesByThousandMounted={isVisible} /> }
+      <TrackVisibility partialVisibility>
+        {({ isVisible }) => <FeaturedDestinations className={classes.FeaturedDestinations} isVisible={isVisible} setHeaderPosition={props.setHeaderPosition} /> }
       </TrackVisibility>
 
-      <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <Testimonials className={classes.Testimonials} isTestimonialsMounted={isVisible} /> }
+      <TrackVisibility partialVisibility>
+        {({ isVisible }) => <GuidesByThousand className={classes.GuidesByThousand} isVisible={isVisible} /> }
       </TrackVisibility>
 
-      <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <TrendingStories className={classes.TrendingStories} isTrendingStoriesMounted={isVisible} /> }
+      <TrackVisibility partialVisibility>
+        {({ isVisible }) => <Testimonials className={classes.Testimonials} isVisible={isVisible} /> }
+      </TrackVisibility>
+
+      <TrackVisibility partialVisibility>
+        {({ isVisible }) => <TrendingStories className={classes.TrendingStories} isVisible={isVisible} /> }
       </TrackVisibility>
     </Container>
   )

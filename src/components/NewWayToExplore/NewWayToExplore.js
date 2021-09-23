@@ -144,19 +144,19 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const NewWayToExplore = ({isNewWayToExploreMounted}) => {
+const NewWayToExplore = ({isVisible}) => {
   const classes = useStyles();
 
   return(
     <Container className={classes.root}>
       <div className={classes.leftPanel}>
-        <Animate isMounted={isNewWayToExploreMounted} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={600}>
           <img className={classes.backdrop} src={Backdrop} alt="Backdrop" />
         </Animate>
       </div>
 
       <div className={classes.rightPanelWrapper}>
-        <Animate isMounted={isNewWayToExploreMounted} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={600}>
           <div className={classes.rightPanel}>
             <Typography className={classes.title}>
               A new way to explore the world
@@ -173,7 +173,7 @@ const NewWayToExplore = ({isNewWayToExploreMounted}) => {
       </div>
 
       <div className={classes.decalContainer}>
-        <Animate isMounted={isNewWayToExploreMounted} type="fade" delay={1000}>
+        <Animate isMounted={isVisible} type="fade" delay={1000}>
           <img className={classes.cross} src={Cross} alt="Cross"/>
           <img className={classes.circle} src={Circle} alt="Circle"/>
         </Animate>

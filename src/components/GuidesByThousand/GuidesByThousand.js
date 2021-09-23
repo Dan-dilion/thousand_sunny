@@ -157,14 +157,14 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const GuidesByThousand = ({isGuidesByThousandMounted}) => {
+const GuidesByThousand = ({isVisible}) => {
   const classes = useStyles();
 
   return(
     <Container className={classes.root}>
 
       <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={isGuidesByThousandMounted} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={600}>
           <div className={classes.leftPanel}>
             <Typography className={classes.title}>
               Guides By Thousand Sunny
@@ -180,13 +180,13 @@ const GuidesByThousand = ({isGuidesByThousandMounted}) => {
       </div>
 
       <div className={classes.rightPanel}>
-        <Animate isMounted={isGuidesByThousandMounted} type="right" delay={600}>
+        <Animate isMounted={isVisible} type="right" delay={600}>
           <img className={classes.backdrop} src={Backdrop} alt="Backdrop" />
         </Animate>
       </div>
 
       <div className={classes.decalContainer}>
-        <Animate isMounted={isGuidesByThousandMounted} type="fade" delay={1000}>
+        <Animate isMounted={isVisible} type="fade" delay={1000}>
           <img className={classes.cross} src={Cross} alt="Cross"/>
           <img className={classes.crossRight} src={CrossRight} alt="Cross_right"/>
           <img className={classes.circle} src={Circle} alt="Circle"/>

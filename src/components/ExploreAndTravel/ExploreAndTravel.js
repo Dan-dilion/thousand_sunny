@@ -204,7 +204,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ExploreAndTravel = (props) => {
+const ExploreAndTravel = ({isVisible}) => {
   const classes = useStyles();
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down(theme.breakpoints.values.md), {noSsr: true});
@@ -239,7 +239,7 @@ const ExploreAndTravel = (props) => {
   return(
     <Container className={classes.root}>
       <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={props.isHomeMounted} type="left" delay={500}>
+        <Animate isMounted={isVisible} type="left" delay={500}>
           <Container className={classes.leftPanel}>
             <Typography className={classes.title}>
               Explore and Travel
@@ -359,13 +359,13 @@ const ExploreAndTravel = (props) => {
 
 
       <div className={classes.rightPanel}>
-        <Animate isMounted={props.isHomeMounted} type="right" delay={300}>
+        <Animate isMounted={isVisible} type="right" delay={300}>
           <Graphic className={classes.graphic}/>
         </Animate>
       </div>
 
       <div className={classes.decalContainer}>
-        <Animate isMounted={props.isHomeMounted} type="fade" delay={1000}>
+        <Animate isMounted={isVisible} type="fade" delay={1000}>
           <CrossLeft className={classes.crossLeft}/>
           <CircleSmall className={classes.circleSmall}/>
           <CircleMedium className={classes.circleMedium}/>

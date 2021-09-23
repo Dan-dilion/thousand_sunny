@@ -127,13 +127,13 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}) => {
+const FeaturedDestinations = ({isVisible, setHeaderPosition}) => {
   const classes = useStyles();
 
   return(
     <Container className={classes.root}>
       <div className={classes.toplineWrapper}>
-        <Animate isMounted={isFeaturedDestinationsMounted} type="top" delay={0}>
+        <Animate isMounted={isVisible} type="top" delay={0}>
           <Container className={classes.topLine}>
             <Typography className={classes.title}>
               Featured Destinations
@@ -147,26 +147,26 @@ const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}
 
       <Container className={classes.imagesContainer}>
         <Container className={classes.topImages}>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="left" delay={200}>
+          <Animate isMounted={isVisible} type="left" delay={200}>
             <img className={classes.image} src={Raja_ampat} alt="Raja_ampat" />
           </Animate>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="top" delay={400}>
+          <Animate isMounted={isVisible} type="top" delay={400}>
             <img className={classes.image} src={Fanjingshan} alt="Fanjingshan" />
           </Animate>
         </Container>
 
         <Container className={classes.bottomImages}>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="bottom" delay={800}>
+          <Animate isMounted={isVisible} type="bottom" delay={800}>
             <img className={classes.image} src={Vevey} alt="Vevey" />
           </Animate>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="right" delay={1000}>
+          <Animate isMounted={isVisible} type="right" delay={1000}>
             <img className={classes.image} src={Skadar} alt="Skadar" />
           </Animate>
         </Container>
       </Container>
 
       <Container className={classes.decalContainer}>
-        <Animate isMounted={isFeaturedDestinationsMounted} type="fade" delay={1400}>
+        <Animate isMounted={isVisible} type="fade" delay={1400}>
           <img className={classes.cross} src={Cross} alt="Cross" />
           <img className={classes.circle1} src={Circle} alt="Circle1" />
           <img className={classes.circle2} src={Circle} alt="Circle2" />

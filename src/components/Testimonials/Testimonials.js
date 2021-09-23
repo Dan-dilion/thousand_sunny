@@ -140,7 +140,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Testimonials = ({isTestimonialsMounted}) => {
+const Testimonials = ({isVisible}) => {
 
   const classes = useStyles();
 
@@ -148,7 +148,7 @@ const Testimonials = ({isTestimonialsMounted}) => {
     <Container className={classes.root}>
 
       <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={isTestimonialsMounted} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={600}>
           <Typography className={classes.title}>
             Testimonials
           </Typography>
@@ -181,13 +181,13 @@ const Testimonials = ({isTestimonialsMounted}) => {
       </div>
 
       <div className={classes.rightPanel}>
-        <Animate isMounted={isTestimonialsMounted} type="right" delay={600}>
+        <Animate isMounted={isVisible} type="right" delay={600}>
           <img className={classes.imageSlider} src={ImageSlider} alt="ImageSlider" />
         </Animate>
       </div>
 
       <div className={classes.decalContainer}>
-        <Animate isMounted={isTestimonialsMounted} type="fade" delay={1000}>
+        <Animate isMounted={isVisible} type="fade" delay={1000}>
           <img className={classes.circle} src={Circle} alt="Circle"/>
         </Animate>
       </div>
