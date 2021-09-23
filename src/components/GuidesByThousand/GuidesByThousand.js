@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Animate from '../Animate/';
 
-import { default as Backdrop } from './assets/new_way_graphic.svg';
+import { default as Backdrop } from './assets/guides_by_thousand_graphic.svg';
 import { default as Cross } from '../../global_assets/cross_no_slant.svg';
+import { default as CrossRight } from '../../global_assets/cross_right_slant.svg';
 import { default as Circle } from '../../global_assets/circle_small.svg';
 
 const useStyles = makeStyles(theme => ({
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
       marginTop: '5%',
     },
   },
-  leftPanel: {
+  rightPanel: {
     // border: '2px solid green',
     overflow: 'hidden',
     height: '100%',
@@ -40,7 +41,7 @@ const useStyles = makeStyles(theme => ({
       opacity: '.3',
     }
   },
-  rightPanelWrapper: {
+  leftPanelWrapper: {
     // border: '2px solid orange',
     alignItems: 'start',
     width: '100%',
@@ -53,7 +54,7 @@ const useStyles = makeStyles(theme => ({
       height: '100%',
     }
   },
-  rightPanel: {
+  leftPanel: {
     // border: '2px solid blue',
     width: '100%',
     height: '100%',
@@ -87,6 +88,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     // padding: '5em',
+    width: '80%',
     color: theme.palette.grey['600'],
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       width: '60%',
@@ -123,58 +125,70 @@ const useStyles = makeStyles(theme => ({
   cross: {
     position: 'absolute',
     height: '1.2vw',
-    top: '10%',
-    left: '50%',
+    top: '15%',
+    left: '103%',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      opacity: .7,
+      left: '85%',
+      height: '2.2vw',
+    }
+  },
+  crossRight: {
+    position: 'absolute',
+    height: '1.2vw',
+    top: '70%',
+    left: '40%',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       opacity: .7,
       height: '2.2vw',
-      top: '10%',
-      left: '46%',
+      left: '20%',
     }
   },
   circle: {
     position: 'absolute',
     height: '1vw',
-    top: '70%',
-    left: '80%',
+    top: '20%',
+    left: '5%',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      height: '2vw',
       opacity: .7,
+      left: '15%',
+      height: '2vw',
     }
   }
 }))
 
-const NewWayToExplore = ({isNewWayToExploreMounted}) => {
+const GuidesByThousand = ({isGuidesByThousandMounted}) => {
   const classes = useStyles();
 
   return(
     <Container className={classes.root}>
-      <div className={classes.leftPanel}>
-        <Animate isMounted={isNewWayToExploreMounted} type="left" delay={600}>
-          <img className={classes.backdrop} src={Backdrop} alt="Backdrop" />
-        </Animate>
-      </div>
 
-      <div className={classes.rightPanelWrapper}>
-        <Animate isMounted={isNewWayToExploreMounted} type="left" delay={600}>
-          <div className={classes.rightPanel}>
+      <div className={classes.leftPanelWrapper}>
+        <Animate isMounted={isGuidesByThousandMounted} type="left" delay={600}>
+          <div className={classes.leftPanel}>
             <Typography className={classes.title}>
-              A new way to explore the world
+              Guides By Thousand Sunny
             </Typography>
             <Typography className={classes.text}>
-            For decades travellers have reached for Lonely Planet
-            books when looking to plan and execute their perfect
-            trip, but now, they can also let Lonely Planet Experiences
-            lead the way
+            Packed with tips and advice from our on-the-ground
+            experts, our city guides app (iOS and Android) is the
+            ultimate resource before and during a trip.
             </Typography>
-            <Button className={classes.button} variant="contained" color="primary" disableElevation={true}>Learn More</Button>
+            <Button className={classes.button} variant="contained" color="primary" disableElevation={true}>Download</Button>
           </div>
         </Animate>
       </div>
 
+      <div className={classes.rightPanel}>
+        <Animate isMounted={isGuidesByThousandMounted} type="right" delay={600}>
+          <img className={classes.backdrop} src={Backdrop} alt="Backdrop" />
+        </Animate>
+      </div>
+
       <div className={classes.decalContainer}>
-        <Animate isMounted={isNewWayToExploreMounted} type="fade" delay={1000}>
+        <Animate isMounted={isGuidesByThousandMounted} type="fade" delay={1000}>
           <img className={classes.cross} src={Cross} alt="Cross"/>
+          <img className={classes.crossRight} src={CrossRight} alt="Cross_right"/>
           <img className={classes.circle} src={Circle} alt="Circle"/>
         </Animate>
       </div>
@@ -183,4 +197,4 @@ const NewWayToExplore = ({isNewWayToExploreMounted}) => {
   );
 }
 
-export default NewWayToExplore;
+export default GuidesByThousand;

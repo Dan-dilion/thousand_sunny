@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ExploreAndTravel from '../../components/ExploreAndTravel';
 import NewWayToExplore from '../../components/NewWayToExplore';
 import FeaturedDestinations from '../../components/FeaturedDestinations';
+import GuidesByThousand from '../../components/GuidesByThousand';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +30,9 @@ const useStyles = makeStyles(theme => ({
   },
   FeaturedDestinations: {
 
+  },
+  GuidesByThousand: {
+
   }
 }))
 
@@ -40,6 +44,7 @@ const Home = (props) => {
       <ExploreAndTravel className={classes.ExploreAndTravel} isHomeMounted={props.isHomeMounted} />
       <NewWayToExplore className={classes.NewWayToExplore} isNewWayToExploreMounted={props.isHomeMounted} />
       <FeaturedDestinations className={classes.FeaturedDestinations} isFeaturedDestinationsMounted={props.isHomeMounted} setHeaderPosition={props.setHeaderPosition} />
+      <GuidesByThousand className={classes.GuidesByThousand} isGuidesByThousandMounted={props.isHomeMounted} />
     </Container>
   )
 }

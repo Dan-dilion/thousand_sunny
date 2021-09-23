@@ -94,7 +94,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     top: '50%',
     left: '-10%',
-    height: '2.5vw',
+    height: '1.5vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       top: '50%',
       left: '-5%',
@@ -104,7 +104,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     top: '-7%',
     left: '70%',
-    height: '3vw',
+    height: '1.2vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       top: '6%',
       left: '70%',
@@ -114,7 +114,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     top: '105%',
     left: '40%',
-    height: '2vw',
+    height: '1.2vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       top: '100%',
       left: '40%',
