@@ -123,6 +123,16 @@ const useStyles = makeStyles(theme => ({
       fontSize: "1rem",
     },
   },
+  dateLabel: {
+    [theme.breakpoints.down('md')]: {
+      fontSize: '.75rem',
+      padding: '.68rem 0'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: "1rem",
+      padding: '1.1rem 0'
+    },
+  },
   endAdornment: {
     marginRight: '-7px',
     color: theme.palette.grey['600']
@@ -198,7 +208,7 @@ const useStyles = makeStyles(theme => ({
 const ExploreAndTravel = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down('md'), {noSsr: true});
+  const isSmall = useMediaQuery(theme.breakpoints.down(theme.breakpoints.values.md), {noSsr: true});
 
   const [location, setLocation] = useState('');
   const [activity, setActivity] = useState('');
@@ -253,6 +263,7 @@ const ExploreAndTravel = (props) => {
                     value={location}
                     onChange={handleChange}
                     label="Location"
+                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                   >
                     <MenuItem value="">
                       <em>-- None --</em>
@@ -274,6 +285,7 @@ const ExploreAndTravel = (props) => {
                     value={activity}
                     onChange={handleChange}
                     label="Activity"
+                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                   >
                     <MenuItem value="">
                       <em>-- None --</em>
@@ -295,6 +307,7 @@ const ExploreAndTravel = (props) => {
                     value={grade}
                     onChange={handleChange}
                     label="Grade"
+                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                   >
                     <MenuItem value="">
                       <em>-- None --</em>
@@ -314,6 +327,9 @@ const ExploreAndTravel = (props) => {
                     margin={isSmall ? "dense" : "none"}
                     inputProps={{style: { width: '100%', fontSize: (date ? '' : 0), minHeight: (date ? '' : '19px') }}}
                     InputProps={{
+                      classes: {
+                        input: classes.dateLabel
+                      },
                       endAdornment: (date ? '' :
                         <InputAdornment position="end">
                           <ArrowDropDownIcon className={classes.endAdornment} />
@@ -322,7 +338,9 @@ const ExploreAndTravel = (props) => {
                     }}
                     value={date}
                     onChange={handleChange}
+                    InputLabelProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                     label="Date"
+                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                   >
                     <MenuItem value="">
                       <em>None</em>

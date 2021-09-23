@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Tabs, Tab, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,10 +18,10 @@ const useStyles = makeStyles(theme => ({
   },
   menuBar: {
     display: 'flex',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexWrap: 'wrap-reverse',
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       flexWrap: 'nowrap',
     },
     padding: 0,
@@ -30,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   tabContainer: {
     display: 'flex',
-    justifyContent: 'end',
+    justifyContent: 'flex-end',
     padding: 0,
   },
   tab: {
@@ -49,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   buttonContainer: {
     padding: 0,
     display: 'flex',
-    justifyContent: 'end',
+    justifyContent: 'flex-end',
   },
   buttons: {
     [theme.breakpoints.down('xs')]: {

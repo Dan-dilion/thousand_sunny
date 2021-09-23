@@ -19,11 +19,11 @@ const useStyles = makeStyles(theme => ({
   },
   main: {
     [theme.breakpoints.down('sm')]: {
-      width: '95%',
+      width: '90%',
       paddingTop: '20px',
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      width: '90%',
+      width: '85%',
       paddingTop: '30px',
     },
     [theme.breakpoints.between('md', 'lg')]: {

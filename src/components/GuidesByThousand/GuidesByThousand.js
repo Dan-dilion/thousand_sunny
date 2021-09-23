@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     width: '100%',
     padding: 0,
-    paddingRight: '1em',
+    paddingLeft: '2em',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       padding: '10% 0',
     }
@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
     height: '40vw',
     width: '100%',
     margin: 'auto',
+    paddingLeft: '1em',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       height: '40vw',
       opacity: '.3',
@@ -46,7 +47,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'start',
     width: '100%',
     padding: '10% 0',
-    paddingLeft: '1em',
     zIndex: 1,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       position: 'absolute',

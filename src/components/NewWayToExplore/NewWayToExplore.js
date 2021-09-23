@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.grey['600'],
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       width: '60%',
-      margin: '0 auto',
+      margin: '0 auto 1em auto',
       fontSize: '.7rem'
     },
     [theme.breakpoints.between('sm','md')]: {

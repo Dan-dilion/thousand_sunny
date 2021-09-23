@@ -14,6 +14,7 @@ import { default as Circle } from '../../global_assets/circle_medium.svg';
 const useStyles = makeStyles(theme => ({
   root: {
     // border: '2px solid red',
+    marginTop: '10%',
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
@@ -134,7 +135,7 @@ const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}
               Featured Destinations
             </Typography>
             <Typography className={classes.ViewAll} component={Link} to="/Destinations" onClick={() => setHeaderPosition(1)}>
-              ViewAll >
+              View all >
             </Typography>
           </Container>
         </Animate>
