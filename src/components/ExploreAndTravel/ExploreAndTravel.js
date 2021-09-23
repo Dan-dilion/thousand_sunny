@@ -158,7 +158,6 @@ const useStyles = makeStyles(theme => ({
   graphic: {
     height: '40vw',
     width: '100%',
-    margin: 'auto',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       height: '40vw',
       opacity: '.3',

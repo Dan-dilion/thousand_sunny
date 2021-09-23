@@ -1,28 +1,33 @@
 import { Link } from 'react-router-dom';
-import { Container, Typography, Button } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import StoryCard from '../StoryCard'
 import Animate from '../Animate/';
 
-import { default as Raja_ampat } from './assets/Raja_ampat.jpg';
-import { default as Fanjingshan } from './assets/Fanjingshan.jpg';
-import { default as Vevey } from './assets/Vevey.jpg';
-import { default as Skadar } from './assets/Skadar.jpg';
+import { default as HealingHoliday } from './assets/healing_holiday.jpg';
+import { default as KyotoResturant } from './assets/kyoto_resturant.jpg';
+import { default as Yucatan } from './assets/yucatan.jpg';
+import { default as SurfsUp } from './assets/surfs_up.jpg';
+
 import { default as Cross } from '../../global_assets/cross_no_slant.svg';
 import { default as Circle } from '../../global_assets/circle_medium.svg';
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
     // border: '2px solid red',
     padding: 0,
-    marginTop: '5%',
+    marginTop: '15%',
+    marginBottom: '10%',
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      width: '80%'
-    }
+    // [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+    //   width: '80%'
+    // }
   },
   toplineWrapper: {
     zIndex: 1
@@ -30,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   topLine: {
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: '3em',
+    marginBottom: '2em',
   },
   title: {
     fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
@@ -53,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1,
     color: theme.palette.primary.main,
     minWidth: '5em',
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   imagesContainer: {
     // border: '2px solid red',
@@ -69,7 +74,7 @@ const useStyles = makeStyles(theme => ({
     // border: '2px solid green',
     position: 'relative',
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     padding: 0,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       padding: 0
@@ -78,15 +83,16 @@ const useStyles = makeStyles(theme => ({
   bottomImages: {
     // border: '2px solid blue',
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     padding: 0,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       padding: 0
     }
   },
-  image: {
-    padding: '0 1em',
-    width: '100%'
+  storyCard: {
+    border: '2px solid blue',
+    // padding: '0 1em',
+    // width: '20vw'
   },
   decalContainer: {
     // border: '2px solid purple',
@@ -97,9 +103,9 @@ const useStyles = makeStyles(theme => ({
   },
   cross: {
     position: 'absolute',
-    top: '50%',
-    left: '-10%',
-    height: '1.5vw',
+    top: '-8%',
+    left: '30%',
+    height: '1.2vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       top: '50%',
       left: '-5%',
@@ -107,7 +113,7 @@ const useStyles = makeStyles(theme => ({
   },
   circle1: {
     position: 'absolute',
-    top: '-7%',
+    top: '105%',
     left: '70%',
     height: '1.2vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
@@ -117,8 +123,8 @@ const useStyles = makeStyles(theme => ({
   },
   circle2: {
     position: 'absolute',
-    top: '105%',
-    left: '40%',
+    top: '60%',
+    left: '-8%',
     height: '1.2vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       top: '100%',
@@ -127,18 +133,22 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}) => {
+const TrendingStories = ({isTrendingStoriesMounted}) => {
   const classes = useStyles();
+
+  const handleLink = (event) => {
+    event.preventDefault();
+  }
 
   return(
     <Container className={classes.root}>
       <div className={classes.toplineWrapper}>
-        <Animate isMounted={isFeaturedDestinationsMounted} type="top" delay={0}>
+        <Animate isMounted={isTrendingStoriesMounted} type="top" delay={0}>
           <Container className={classes.topLine}>
             <Typography className={classes.title}>
-              Featured Destinations
+              Trending Stories
             </Typography>
-            <Typography className={classes.ViewAll} component={Link} to="/Destinations" onClick={() => setHeaderPosition(1)}>
+            <Typography className={classes.ViewAll} component={Link} onClick={handleLink}>
               View all >
             </Typography>
           </Container>
@@ -147,26 +157,50 @@ const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}
 
       <Container className={classes.imagesContainer}>
         <Container className={classes.topImages}>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="left" delay={200}>
-            <img className={classes.image} src={Raja_ampat} alt="Raja_ampat" />
+          <Animate isMounted={isTrendingStoriesMounted} type="left" delay={200}>
+            <StoryCard
+              className={classes.storyCard}
+              image={HealingHoliday}
+              alt="HealingHoliday"
+              title="The many benefits of taking a healing holiday"
+              text="‘Helaing holidays’ are on the rise to help maximise your health and happines..."
+            />
           </Animate>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="top" delay={400}>
-            <img className={classes.image} src={Fanjingshan} alt="Fanjingshan" />
+          <Animate isMounted={isTrendingStoriesMounted} type="top" delay={400}>
+            <StoryCard
+              className={classes.storyCard}
+              image={KyotoResturant}
+              alt="KyotoResturant"
+              title="The best Kyoto restaurant to try Japanese food"
+              text="From tofu to teahouses, here’s our guide to Kyoto’s best restaurants to visit..."
+            />
           </Animate>
         </Container>
 
         <Container className={classes.bottomImages}>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="bottom" delay={800}>
-            <img className={classes.image} src={Vevey} alt="Vevey" />
+          <Animate isMounted={isTrendingStoriesMounted} type="bottom" delay={800}>
+            <StoryCard
+              className={classes.storyCard}
+              image={Yucatan}
+              alt="Yucatan"
+              title="Skip Chichen Itza and head to this remote Yucatan"
+              text="It’s remote and challenging to get, but braving the jungle and exploring these ruins without the..."
+            />
           </Animate>
-          <Animate isMounted={isFeaturedDestinationsMounted} type="right" delay={1000}>
-            <img className={classes.image} src={Skadar} alt="Skadar" />
+          <Animate isMounted={isTrendingStoriesMounted} type="right" delay={1000}>
+            <StoryCard
+              className={classes.storyCard}
+              image={SurfsUp}
+              alt="SurfsUp"
+              title="Surf’s up at these beginner spots around the world"
+              text="If learning to surf has in on your to-do list for a while, the good news is: it’s never too late..."
+            />
           </Animate>
         </Container>
       </Container>
 
       <Container className={classes.decalContainer}>
-        <Animate isMounted={isFeaturedDestinationsMounted} type="fade" delay={1400}>
+        <Animate isMounted={isTrendingStoriesMounted} type="fade" delay={1400}>
           <img className={classes.cross} src={Cross} alt="Cross" />
           <img className={classes.circle1} src={Circle} alt="Circle1" />
           <img className={classes.circle2} src={Circle} alt="Circle2" />
@@ -176,4 +210,4 @@ const FeaturedDestinations = ({isFeaturedDestinationsMounted, setHeaderPosition}
   )
 }
 
-export default FeaturedDestinations;
+export default TrendingStories;

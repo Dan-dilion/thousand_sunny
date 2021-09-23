@@ -45,6 +45,11 @@ const theme = createTheme({
         color: 'white',
         fontWeight: '600'
       }
+    },
+    MuiCardContent: {
+      root: {
+        padding: 0
+      }
     }
   },
 })

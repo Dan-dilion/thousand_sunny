@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     display: 'flex',
     width: '100%',
-    marginTop: '10%',
+    marginTop: '5%',
     padding: 0,
     justifyContent: 'space-between',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {

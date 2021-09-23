@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       marginTop: '5%',
-      padding: '0 10%'
+      padding: '0 5%'
     },
   },
   rightPanel: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     padding: 0,
     paddingRight: '1em',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      padding: '10% 0',
+      padding: '0',
     }
   },
   imageSlider: {
@@ -89,6 +89,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       fontSize: '.5rem',
       marginBottom: '1em',
+      width: '90%',
     },
     [theme.breakpoints.between('sm','md')]: {
       fontSize: '.7rem'
