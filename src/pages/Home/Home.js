@@ -25,6 +25,30 @@ const useStyles = makeStyles(theme => ({
       width: '100%'
     },
   },
+  exploreAndTravel: {
+    // border: '2px solid red',
+    height: '40vw'
+  },
+  newWayToExplore: {
+    // border: '2px solid purple',
+    height: '40vw'
+  },
+  featuredDestinations: {
+    // border: '2px solid orange',
+    height: '25vw'
+  },
+  guidesByThousand: {
+    // border: '2px solid magenta',
+    height: '40vw'
+  },
+  testimonials: {
+    // border: '2px solid cyan',
+    height: '40vw'
+  },
+  trendingStories: {
+    // border: '2px solid blue',
+    height: '40vw'
+  }
 }))
 
 const Home = (props) => {
@@ -33,28 +57,28 @@ const Home = (props) => {
 
   return(
     <Container className={classes.root}>
-      <TrackVisibility partialVisibility>
-        {({ isVisible }) => <ExploreAndTravel isVisible={isVisible} /> }
+      <TrackVisibility className={classes.exploreAndTravel} partialVisibility>
+        {({ isVisible }) => isVisible && <ExploreAndTravel isVisible={isVisible} /> }
       </TrackVisibility>
 
-      <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <NewWayToExplore isVisible={isVisible} /> }
+      <TrackVisibility className={classes.newWayToExplore} offset={VISIBILITY_OFFSET}>
+        {({ isVisible }) => isVisible && <NewWayToExplore isVisible={isVisible} /> }
       </TrackVisibility>
 
-      <TrackVisibility partialVisibility>
-        {({ isVisible }) => <FeaturedDestinations isVisible={isVisible} setHeaderPosition={props.setHeaderPosition} /> }
+      <TrackVisibility className={classes.featuredDestinations} partialVisibility>
+        {({ isVisible }) => isVisible && <FeaturedDestinations isVisible={isVisible} setHeaderPosition={props.setHeaderPosition} /> }
       </TrackVisibility>
 
-      <TrackVisibility partialVisibility>
-        {({ isVisible }) => <GuidesByThousand isVisible={isVisible} /> }
+      <TrackVisibility className={classes.guidesByThousand} partialVisibility>
+        {({ isVisible }) => isVisible && <GuidesByThousand isVisible={isVisible} /> }
       </TrackVisibility>
 
-      <TrackVisibility partialVisibility>
-        {({ isVisible }) => <Testimonials isVisible={isVisible} /> }
+      <TrackVisibility className={classes.testimonials} partialVisibility>
+        {({ isVisible }) => isVisible && <Testimonials isVisible={isVisible} /> }
       </TrackVisibility>
 
-      <TrackVisibility partialVisibility>
-        {({ isVisible }) => <TrendingStories isVisible={isVisible} /> }
+      <TrackVisibility className={classes.trendingStories} partialVisibility>
+        {({ isVisible }) => isVisible && <TrendingStories isVisible={isVisible} /> }
       </TrackVisibility>
     </Container>
   )
