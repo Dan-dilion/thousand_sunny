@@ -76,7 +76,7 @@ const useStyles = makeStyles(theme => ({
       height: '90vw'
     },
     [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
-      height: '25vw'
+      height: '40vw'
     }
   }
 }))
