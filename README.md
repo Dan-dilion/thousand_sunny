@@ -1,5 +1,5 @@
 # Thousand Sunny
-a technical exercise for Framework Design
+A technical exercise for Framework Design
 
 ### [Click here](http://www.waxworlds.org/dan/thousand_sunny) to see project
 
