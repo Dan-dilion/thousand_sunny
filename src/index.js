@@ -6,6 +6,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import './index.css';
 import '@fontsource/roboto';
+import '@fontsource/playfair-display';
+import '@fontsource/mulish';
 import theme from './styling/muiTheme.js';
 import { App } from './App';
 // import reportWebVitals from './reportWebVitals';

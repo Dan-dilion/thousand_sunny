@@ -56,8 +56,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
   },
   title: {
-    fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
-    fontWeight: '600',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     width: '80%',
     lineHeight: 1,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
@@ -83,6 +83,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: '.4em'
   },
   text: {
+    fontFamily: ['"Mulish"'].join(','),
     width: '80%',
     marginBottom: '2em',
     color: theme.palette.grey['600'],
@@ -102,6 +103,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   authorName: {
+    fontFamily: ['"Mulish"'].join(','),
     width: '80%',
     color: theme.palette.grey['800'],
     fontWeight: '800',

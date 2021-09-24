@@ -68,8 +68,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   title: {
-    fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
-    fontWeight: '600',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     width: '80%',
     marginBottom: '3%',
     lineHeight: 1,
@@ -88,6 +88,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     // padding: '5em',
+    fontFamily: ['"Mulish"'].join(','),
     width: '80%',
     color: theme.palette.grey['600'],
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
@@ -174,7 +175,12 @@ const GuidesByThousand = ({isVisible}) => {
             experts, our city guides app (iOS and Android) is the
             ultimate resource before and during a trip.
             </Typography>
-            <Button className={classes.button} variant="contained" color="primary" disableElevation={true}>Download</Button>
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="primary"
+              disableElevation={true}
+            >Download</Button>
           </div>
         </Animate>
       </div>

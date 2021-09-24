@@ -38,8 +38,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '2em',
   },
   title: {
-    fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
-    fontWeight: '600',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       width: '100%',
       fontSize: '1rem',
@@ -143,12 +143,12 @@ const TrendingStories = ({isVisible}) => {
   return(
     <Container className={classes.root}>
       <div className={classes.toplineWrapper}>
-        <Animate isMounted={isVisible} type="top" delay={0}>
+        <Animate isMounted={isVisible} type="top" delay={800}>
           <Container className={classes.topLine}>
             <Typography className={classes.title}>
               Trending Stories
             </Typography>
-            <Typography className={classes.ViewAll} component={Link} onClick={handleLink}>
+            <Typography className={classes.ViewAll} component={Link} to="/Stories" onClick={handleLink}>
               View all >
             </Typography>
           </Container>
@@ -157,7 +157,7 @@ const TrendingStories = ({isVisible}) => {
 
       <Container className={classes.imagesContainer}>
         <Container className={classes.topImages}>
-          <Animate isMounted={isVisible} type="left" delay={200}>
+          <Animate isMounted={isVisible} type="left" delay={0}>
             <StoryCard
               className={classes.storyCard}
               image={HealingHoliday}
@@ -166,7 +166,7 @@ const TrendingStories = ({isVisible}) => {
               text="‘Helaing holidays’ are on the rise to help maximise your health and happines..."
             />
           </Animate>
-          <Animate isMounted={isVisible} type="top" delay={400}>
+          <Animate isMounted={isVisible} type="top" delay={200}>
             <StoryCard
               className={classes.storyCard}
               image={KyotoResturant}
@@ -178,7 +178,7 @@ const TrendingStories = ({isVisible}) => {
         </Container>
 
         <Container className={classes.bottomImages}>
-          <Animate isMounted={isVisible} type="bottom" delay={800}>
+          <Animate isMounted={isVisible} type="bottom" delay={400}>
             <StoryCard
               className={classes.storyCard}
               image={Yucatan}
@@ -187,7 +187,7 @@ const TrendingStories = ({isVisible}) => {
               text="It’s remote and challenging to get, but braving the jungle and exploring these ruins without the..."
             />
           </Animate>
-          <Animate isMounted={isVisible} type="right" delay={1000}>
+          <Animate isMounted={isVisible} type="right" delay={600}>
             <StoryCard
               className={classes.storyCard}
               image={SurfsUp}

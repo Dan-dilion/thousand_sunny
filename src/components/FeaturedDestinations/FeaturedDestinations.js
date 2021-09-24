@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Container, Typography, Button } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Animate from '../Animate/';
@@ -33,8 +33,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '3em',
   },
   title: {
-    fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
-    fontWeight: '600',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       width: '100%',
       fontSize: '1rem',
@@ -133,7 +133,7 @@ const FeaturedDestinations = ({isVisible, setHeaderPosition}) => {
   return(
     <Container className={classes.root}>
       <div className={classes.toplineWrapper}>
-        <Animate isMounted={isVisible} type="top" delay={0}>
+        <Animate isMounted={isVisible} type="top" delay={800}>
           <Container className={classes.topLine}>
             <Typography className={classes.title}>
               Featured Destinations
@@ -147,7 +147,7 @@ const FeaturedDestinations = ({isVisible, setHeaderPosition}) => {
 
       <Container className={classes.imagesContainer}>
         <Container className={classes.topImages}>
-          <Animate isMounted={isVisible} type="left" delay={200}>
+          <Animate isMounted={isVisible} type="left" delay={0}>
             <img className={classes.image} src={Raja_ampat} alt="Raja_ampat" />
           </Animate>
           <Animate isMounted={isVisible} type="top" delay={400}>
@@ -156,10 +156,10 @@ const FeaturedDestinations = ({isVisible, setHeaderPosition}) => {
         </Container>
 
         <Container className={classes.bottomImages}>
-          <Animate isMounted={isVisible} type="bottom" delay={800}>
+          <Animate isMounted={isVisible} type="bottom" delay={400}>
             <img className={classes.image} src={Vevey} alt="Vevey" />
           </Animate>
-          <Animate isMounted={isVisible} type="right" delay={1000}>
+          <Animate isMounted={isVisible} type="right" delay={600}>
             <img className={classes.image} src={Skadar} alt="Skadar" />
           </Animate>
         </Container>

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TrackVisibility from 'react-on-screen';
@@ -26,55 +25,36 @@ const useStyles = makeStyles(theme => ({
       width: '100%'
     },
   },
-  ExploreAndTravel: {
-    // minHeight: '370px',
-  },
-  NewWayToExplore: {
-
-  },
-  FeaturedDestinations: {
-
-  },
-  GuidesByThousand: {
-
-  },
-  Testimonials: {
-
-  },
-  TrendingStories: {
-
-  }
 }))
 
 const Home = (props) => {
   const classes = useStyles();
-
   const VISIBILITY_OFFSET = 600;
 
   return(
     <Container className={classes.root}>
       <TrackVisibility partialVisibility>
-        {({ isVisible }) => <ExploreAndTravel className={classes.ExploreAndTravel} isVisible={isVisible} /> }
+        {({ isVisible }) => <ExploreAndTravel isVisible={isVisible} /> }
       </TrackVisibility>
 
       <TrackVisibility offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => <NewWayToExplore className={classes.NewWayToExplore} isVisible={isVisible} /> }
+        {({ isVisible }) => <NewWayToExplore isVisible={isVisible} /> }
       </TrackVisibility>
 
       <TrackVisibility partialVisibility>
-        {({ isVisible }) => <FeaturedDestinations className={classes.FeaturedDestinations} isVisible={isVisible} setHeaderPosition={props.setHeaderPosition} /> }
+        {({ isVisible }) => <FeaturedDestinations isVisible={isVisible} setHeaderPosition={props.setHeaderPosition} /> }
       </TrackVisibility>
 
       <TrackVisibility partialVisibility>
-        {({ isVisible }) => <GuidesByThousand className={classes.GuidesByThousand} isVisible={isVisible} /> }
+        {({ isVisible }) => <GuidesByThousand isVisible={isVisible} /> }
       </TrackVisibility>
 
       <TrackVisibility partialVisibility>
-        {({ isVisible }) => <Testimonials className={classes.Testimonials} isVisible={isVisible} /> }
+        {({ isVisible }) => <Testimonials isVisible={isVisible} /> }
       </TrackVisibility>
 
       <TrackVisibility partialVisibility>
-        {({ isVisible }) => <TrendingStories className={classes.TrendingStories} isVisible={isVisible} /> }
+        {({ isVisible }) => <TrendingStories isVisible={isVisible} /> }
       </TrackVisibility>
     </Container>
   )

@@ -67,8 +67,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   title: {
-    fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
-    fontWeight: '600',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     width: '80%',
     marginBottom: '3%',
     lineHeight: 1,
@@ -87,6 +87,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     // padding: '5em',
+    fontFamily: ['"Mulish"'].join(','),
     color: theme.palette.grey['600'],
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       width: '60%',

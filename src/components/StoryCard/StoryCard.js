@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     // backgroundPosition: 'top'
   },
   title: {
+    fontFamily: ['"Mulish"'].join(','),
     padding: '.5em 0',
     overflow: 'auto',
     // maxHeight: '3em',
@@ -42,8 +43,8 @@ const useStyles = makeStyles(theme => ({
       // height: '10%',
     },
     [theme.breakpoints.between('sm','md')]: {
-      fontSize: '.7rem',
-      height: '5em',
+      fontSize: '.6rem',
+      height: '6em',
     },
     [theme.breakpoints.between('md', 'lg')]: {
       fontSize: '.9rem',
@@ -55,22 +56,23 @@ const useStyles = makeStyles(theme => ({
     },
   },
   text: {
+    fontFamily: ['"Mulish"'].join(','),
     overflow: 'auto',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       fontSize: '.5rem',
       // height: '10%',
     },
     [theme.breakpoints.between('sm','md')]: {
-      fontSize: '.65rem',
-      height: '8em',
+      fontSize: '.6rem',
+      height: '8.5em',
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '.9rem',
-      height: '6em',
+      fontSize: '.8rem',
+      height: '6.5em',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: "1.2rem",
-      height: '6em',
+      fontSize: "1rem",
+      height: '7.5em',
     },
   },
   readMore: {

@@ -55,8 +55,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   title: {
-    fontFamily: ['"Montserrat"', 'Open Sans'].join(','),
-    fontWeight: '600',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     width: '80%',
     maxWidth: '6em',
     minWidth: '225px',
@@ -76,6 +76,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   subHeading: {
+    fontFamily: ['"Mulish"'].join(','),
     fontWeight: '600',
     marginBottom: '3%',
     [theme.breakpoints.down('md')]: {
@@ -214,6 +215,7 @@ const ExploreAndTravel = ({isVisible}) => {
   const [grade, setGrade] = useState('');
   const [date, setDate] = useState('');
 
+  // Handle the selection boxes
   const handleChange = event => {
     switch (event.target.name) {
       case "location":
@@ -339,7 +341,6 @@ const ExploreAndTravel = ({isVisible}) => {
                     onChange={handleChange}
                     InputLabelProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                     label="Date"
-                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
                   >
                     <MenuItem value="">
                       <em>None</em>
@@ -359,7 +360,7 @@ const ExploreAndTravel = ({isVisible}) => {
 
 
       <div className={classes.rightPanel}>
-        <Animate isMounted={isVisible} type="right" delay={300}>
+        <Animate isMounted={isVisible} type="right" delay={0}>
           <Graphic className={classes.graphic}/>
         </Animate>
       </div>

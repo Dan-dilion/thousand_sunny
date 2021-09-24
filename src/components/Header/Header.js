@@ -67,24 +67,24 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Header = (props) => {
+const Header = ({isHeaderMounted, headerSelection, setHeaderPosition}) => {
   const classes = useStyles();
 
   const handleChange = (event, newValue) => {
-    props.setHeaderPosition(newValue);
+    setHeaderPosition(newValue);
   };
 
 
   return(
     <Container className={classes.root}>
-      <Animate isMounted={props.isHeaderMounted} type="top">
+      <Animate isMounted={isHeaderMounted} type="top" delay={1000}>
         <Logo className={classes.logo}/>
       </Animate>
-      <Animate isMounted={props.isHeaderMounted} type="bottom">
+      <Animate isMounted={isHeaderMounted} type="bottom" delay={1200}>
         <Container className={classes.menuBar}>
           <Container className={classes.tabContainer}>
             <Tabs
-              value={props.headerSelection}
+              value={headerSelection}
               onChange={handleChange}
               indicatorColor="secondary"
             >

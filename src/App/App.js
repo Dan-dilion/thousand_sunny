@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 
 export const App = () => {
   const classes = useStyles();
-  const [ headerSelection, setHeaderSelection ] = useState(null);
+  const [ headerSelection, setHeaderSelection ] = useState('unset');
   const [ isHeaderMounted, setIsHeaderMounted ] = useState(false);
   const [ isHomeMounted, setIsHomeMounted ] = useState(false);
 
@@ -52,7 +52,18 @@ export const App = () => {
     setIsHeaderMounted(true);
     setIsHomeMounted(true);
     setTimeout(() => {        // Prevent selection underline position being set
-      setHeaderSelection(0)     // wonky during transitioning
+      console.log('URL: ', window.location);
+
+      switch (window.location.pathname.split('/').reverse()[0]) {
+        case 'Home': setHeaderSelection(0); break;
+        case 'thousand_sunny': setHeaderSelection(0); break;
+        case '': setHeaderSelection(0); break;
+        case 'Destinations': setHeaderSelection(1); break;
+        case 'About': setHeaderSelection(2); break;
+        case 'Partner': setHeaderSelection(3); break;
+        default: break;
+      }
+      // setHeaderSelection(0)     // wonky during transitioning
     }, 1000);
   }, []);
 
@@ -66,10 +77,29 @@ export const App = () => {
         />
 
         <Route
-          exact path={['/', '/Home']}
+          exact path={['/Home', '/']}
         >
           <Home isHomeMounted={isHomeMounted} setHeaderPosition={setHeaderSelection} />
         </Route>
+
+        <Route
+          path={'/Destinations'}
+        >
+          <h1>No Content</h1>
+      </Route>
+
+        <Route
+          path={'/About'}
+        >
+          <h1>No Content</h1>
+      </Route>
+
+        <Route
+          path={'/Partner'}
+        >
+          <h1>No Content</h1>
+      </Route>
+
       </Container>
 
       <Footer />
