@@ -27,10 +27,16 @@ const useStyles = makeStyles(theme => ({
   },
   exploreAndTravel: {
     // border: '2px solid red',
-    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      height: '70vw'
+    [theme.breakpoints.down('xs')]: {
+      height: '85vw'
     },
-    [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: '60vw'
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      height: '50vw'
+    },
+    [theme.breakpoints.up(theme.breakpoints.values['md'])]: {
       height: '40vw'
     }
   },
@@ -45,11 +51,14 @@ const useStyles = makeStyles(theme => ({
   },
   featuredDestinations: {
     // border: '2px solid orange',
-    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+    [theme.breakpoints.down('xs')]: {
+      height: '110vw'
+    },
+    [theme.breakpoints.between('xs', 'sm')]: {
       height: '100vw'
     },
     [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
-      height: '25vw'
+      height: '40vw'
     }
   },
   guidesByThousand: {
@@ -72,11 +81,17 @@ const useStyles = makeStyles(theme => ({
   },
   trendingStories: {
     // border: '2px solid blue',
-    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      height: '90vw'
+    [theme.breakpoints.down('xs')]: {
+      height: '140vw'
     },
-    [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
-      height: '40vw'
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: '100vw'
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      height: '70vw'
+    },
+    [theme.breakpoints.up(theme.breakpoints.values['md'])]: {
+      height: '60vw'
     }
   }
 }))

@@ -24,10 +24,10 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    // [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-    //   width: '80%'
-    // }
+    justifyContent: 'space-between',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      marginTop: 0,
+    }
   },
   toplineWrapper: {
     zIndex: 1

@@ -157,7 +157,7 @@ const useStyles = makeStyles(theme => ({
     padding: 0,
   },
   graphic: {
-    height: '40vw',
+    height: '100%',
     width: '100%',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       height: '40vw',

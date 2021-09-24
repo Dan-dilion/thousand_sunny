@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     display: 'flex',
     width: '100%',
-    marginTop: '7%',
+    // marginTop: '7%',
     padding: 0,
     justifyContent: 'space-between',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
