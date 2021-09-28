@@ -124,6 +124,14 @@ const useStyles = makeStyles(theme => ({
       fontSize: "1rem",
     },
   },
+  selectDisplay: {
+    [theme.breakpoints.down('md')]: {
+      fontSize: '.75rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: "1rem",
+    },
+  },
   dateLabel: {
     [theme.breakpoints.down('md')]: {
       fontSize: '.75rem',
@@ -264,7 +272,11 @@ const ExploreAndTravel = ({isVisible}) => {
                     value={location}
                     onChange={handleChange}
                     label="Location"
-                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
+                    inputProps={{
+                      classes: {
+                        select: classes.selectDisplay
+                      }
+                    }}
                   >
                     <MenuItem value="">
                       <em>-- None --</em>
@@ -286,8 +298,11 @@ const ExploreAndTravel = ({isVisible}) => {
                     value={activity}
                     onChange={handleChange}
                     label="Activity"
-                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
-                  >
+                    inputProps={{
+                      classes: {
+                        select: classes.selectDisplay
+                      }
+                    }}                  >
                     <MenuItem value="">
                       <em>-- None --</em>
                     </MenuItem>
@@ -308,8 +323,11 @@ const ExploreAndTravel = ({isVisible}) => {
                     value={grade}
                     onChange={handleChange}
                     label="Grade"
-                    SelectDisplayProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
-                  >
+                    inputProps={{
+                      classes: {
+                        select: classes.selectDisplay
+                      }
+                    }}                  >
                     <MenuItem value="">
                       <em>-- None --</em>
                     </MenuItem>
