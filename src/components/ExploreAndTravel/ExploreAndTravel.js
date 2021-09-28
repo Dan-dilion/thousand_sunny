@@ -132,14 +132,23 @@ const useStyles = makeStyles(theme => ({
       fontSize: "1rem",
     },
   },
-  dateLabel: {
+  selectedDate: {
+    textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '.75rem',
-      padding: '.68rem 0'
+      padding: '.8rem 0'
     },
     [theme.breakpoints.up('md')]: {
       fontSize: "1rem",
       padding: '1.1rem 0'
+    },
+  },
+  dateInputLabel: {
+    [theme.breakpoints.down('md')]: {
+      fontSize: '.75rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: "1rem",
     },
   },
   endAdornment: {
@@ -222,6 +231,16 @@ const ExploreAndTravel = ({isVisible}) => {
   const [activity, setActivity] = useState('');
   const [grade, setGrade] = useState('');
   const [date, setDate] = useState('');
+  const [ isDateFocused, setIsDateFocused ] = useState(false);
+
+  const handleDateFocus = event => {
+    console.log('Enevt Here: ', event);
+    switch (event.type) {
+      case 'focus': setIsDateFocused(true); break;
+      case 'blur': setIsDateFocused(false); break;
+      default: break;
+    }
+  }
 
   // Handle the selection boxes
   const handleChange = event => {
@@ -342,31 +361,29 @@ const ExploreAndTravel = ({isVisible}) => {
                     name="date"
                     type="date"
                     variant="outlined"
-                    focused={(date ? true : false)}
+                    focused={isDateFocused}
+                    onFocus={handleDateFocus}
+                    onBlur={handleDateFocus}
                     margin={isSmall ? "dense" : "none"}
-                    inputProps={{style: { width: '100%', fontSize: (date ? '' : 0), minHeight: (date ? '' : '19px') }}}
+                    inputProps={{style: { opacity: (date ? '1' : '0')}}}
                     InputProps={{
                       classes: {
-                        input: classes.dateLabel
+                        input: classes.selectedDate
                       },
-                      endAdornment: (date ? '' :
+                      endAdornment: date ? isSmall ? "" : <div /> :
                         <InputAdornment position="end">
                           <ArrowDropDownIcon className={classes.endAdornment} />
                         </InputAdornment>
-                      )
                     }}
                     value={date}
                     onChange={handleChange}
-                    InputLabelProps={{style: {fontSize: (isSmall ? '.75rem' : '1rem') }}}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.dateInputLabel
+                      }
+                    }}
                     label="Date"
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </TextField>
+                  />
                 </FormControl>
               </Container>
             </Container>
