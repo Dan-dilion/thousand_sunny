@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core';
 import TrackVisibility from 'react-on-screen';
 
-import Animate from '../../components/Animate';
+import Animate from '../../globalComponents/Animate';
 
 import AboutLogic from './AboutLogic.js';
 

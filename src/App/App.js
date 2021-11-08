@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { Container } from '@material-ui/core';
 
-import Header from '../components/Header';
+import Header from '../globalComponents/Header';
 import Home from '../pages/Home';
-import Footer from '../components/Footer';
+import Footer from '../globalComponents/Footer';
 import About from '../pages/About';
 import Destinations from '../pages/Destinations';
 import Stories from '../pages/Stories';
