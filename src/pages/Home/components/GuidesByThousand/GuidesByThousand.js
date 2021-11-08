@@ -1,11 +1,11 @@
 import { Container, Typography, Button } from '@material-ui/core';
 
-import Animate from '../Animate/';
+import Animate from '../../../../globalComponents/Animate/';
 
 import { default as Backdrop } from './assets/guides_by_thousand_graphic.svg';
-import { default as Cross } from '../../global_assets/cross_no_slant.svg';
-import { default as CrossRight } from '../../global_assets/cross_right_slant.svg';
-import { default as Circle } from '../../global_assets/circle_small.svg';
+import { default as Cross } from '../../../../global_assets/cross_no_slant.svg';
+import { default as CrossRight } from '../../../../global_assets/cross_right_slant.svg';
+import { default as Circle } from '../../../../global_assets/circle_small.svg';
 
 import GuidesByThousandLogic from './GuidesByThousandLogic';
 

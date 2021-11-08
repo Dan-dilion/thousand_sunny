@@ -59,9 +59,11 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     display: 'flex',
     justifyContent: 'space-around',
+    marginBottom: 0,
     padding: 0,
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      padding: 0
+      padding: 0,
+      marginBottom: '2.5%',
     }
   },
   bottomImages: {
@@ -72,10 +74,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       padding: 0
     }
-  },
-  image: {
-    padding: '0 1em',
-    width: '100%'
   },
   decalContainer: {
     // border: '2px solid purple',

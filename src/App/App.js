@@ -7,7 +7,7 @@ import Home from '../pages/Home';
 import Footer from '../components/Footer';
 import About from '../pages/About';
 import Destinations from '../pages/Destinations';
-import Partner from '../pages/Partner';
+import Stories from '../pages/Stories';
 
 import AppLogic from './AppLogic';
 
@@ -17,28 +17,21 @@ export const App = () => {
   const {
     classes,
     headerSelection,
-    setHeaderSelection,
+    setHeaderUnderline,
     isHeaderMounted,
     setIsHeaderMounted,
-    isHomeMounted,
-    setIsHomeMounted
   } = AppLogic();
 
   useEffect( () => {
     setIsHeaderMounted(true);
-    setIsHomeMounted(true);
-    setTimeout(() => {        // Prevent selection underline position being set during transitioning
-      switch (window.location.pathname.split('/').reverse()[0]) {
-        case 'Home': setHeaderSelection(0); break;
-        case 'thousand_sunny': setHeaderSelection(0); break;
-        case '': setHeaderSelection(0); break;
-        case 'Destinations': setHeaderSelection(1); break;
-        case 'About': setHeaderSelection(2); break;
-        case 'Partner': setHeaderSelection(3); break;
-        default: break;
-      }
+    setTimeout(() => {        // Prevent wonkey underline position being set during transitioning
+      const routeName = window.location.pathname.endsWith('/')
+        ? window.location.pathname.split('/').reverse()[1]      // Select next item if path
+        : window.location.pathname.split('/').reverse()[0];     // has a '/' at the end
+
+      setHeaderUnderline(routeName);
     }, 2000);     // This delay must be >= the transition time of the header bar
-  }, [setIsHeaderMounted, setIsHomeMounted, setHeaderSelection] );
+  }, [setIsHeaderMounted, setHeaderUnderline] );
 
   return (
     <Container className={classes.root} maxWidth={false}>
@@ -46,32 +39,24 @@ export const App = () => {
         <Header
           isHeaderMounted={isHeaderMounted}
           headerSelection={headerSelection}
-          setHeaderPosition={setHeaderSelection}
+          setHeaderUnderline={setHeaderUnderline}
         />
 
-        <Route
-          exact path={['/Home', '/']}
-        >
-          <Home isHomeMounted={isHomeMounted} setHeaderPosition={setHeaderSelection} />
+        <Route exact path={['/Home', '/']}>
+          <Home setHeaderUnderline={setHeaderUnderline} />
         </Route>
 
-        <Route
-          path={'/Destinations'}
-        >
+        <Route path={'/About'}>
+          <About />
+        </Route>
+
+        <Route path={'/Stories'}>
+          <Stories />
+        </Route>
+
+        <Route path={'/Destinations'}>
           <Destinations />
         </Route>
-
-        <Route
-          path={'/About'}
-        >
-          <About />
-      </Route>
-
-        <Route
-          path={'/Partner'}
-        >
-          <Partner />
-      </Route>
 
       </Container>
 

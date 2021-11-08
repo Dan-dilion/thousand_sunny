@@ -1,12 +1,12 @@
 import { Container } from '@material-ui/core';
 import TrackVisibility from 'react-on-screen';
 
-import ExploreAndTravel from '../../components/ExploreAndTravel';
-import NewWayToExplore from '../../components/NewWayToExplore';
-import FeaturedDestinations from '../../components/FeaturedDestinations';
-import GuidesByThousand from '../../components/GuidesByThousand';
-import Testimonials from '../../components/Testimonials';
-import TrendingStories from '../../components/TrendingStories';
+import ExploreAndTravel from './components/ExploreAndTravel';
+import NewWayToExplore from './components/NewWayToExplore';
+import FeaturedDestinations from './components/FeaturedDestinations';
+import GuidesByThousand from './components/GuidesByThousand';
+import Testimonials from './components/Testimonials';
+import TrendingStories from './components/TrendingStories';
 
 import HomeLogic from './HomeLogic';
 
@@ -15,7 +15,7 @@ const Home = (props) => {
 
   // Destructure logic
   const {
-    setHeaderPosition,
+    setHeaderUnderline,
     classes,
     VISIBILITY_OFFSET
   } = HomeLogic(props);
@@ -31,7 +31,7 @@ const Home = (props) => {
       </TrackVisibility>
 
       <TrackVisibility className={classes.featuredDestinations} partialVisibility>
-        {({ isVisible }) => isVisible && <FeaturedDestinations isVisible={isVisible} setHeaderPosition={setHeaderPosition} /> }
+        {({ isVisible }) => isVisible && <FeaturedDestinations isVisible={isVisible} setHeaderUnderline={setHeaderUnderline} /> }
       </TrackVisibility>
 
       <TrackVisibility className={classes.guidesByThousand} partialVisibility>
@@ -43,7 +43,7 @@ const Home = (props) => {
       </TrackVisibility>
 
       <TrackVisibility className={classes.trendingStories} partialVisibility>
-        {({ isVisible }) => isVisible && <TrendingStories isVisible={isVisible} /> }
+        {({ isVisible }) => isVisible && <TrendingStories isVisible={isVisible} setHeaderUnderline={setHeaderUnderline} /> }
       </TrackVisibility>
     </Container>
   )

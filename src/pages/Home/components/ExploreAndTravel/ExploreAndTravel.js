@@ -13,11 +13,11 @@ import {
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 import { ReactComponent as Graphic } from './assets/backpacker.svg';
-import { ReactComponent as CrossLeft } from '../../global_assets/cross_small_left_slant.svg';
-import { ReactComponent as CircleSmall } from '../../global_assets/circle_small.svg';
-import { ReactComponent as CircleMedium } from '../../global_assets/circle_medium.svg';
+import { ReactComponent as CrossLeft } from '../../../../global_assets/cross_small_left_slant.svg';
+import { ReactComponent as CircleSmall } from '../../../../global_assets/circle_small.svg';
+import { ReactComponent as CircleMedium } from '../../../../global_assets/circle_medium.svg';
 
-import Animate from '../Animate/';
+import Animate from '../../../../globalComponents/Animate/';
 
 import ExploreAndTravelLogic from './ExploreAndTravelLogic';
 

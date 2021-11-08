@@ -8,6 +8,7 @@ import './index.css';
 import '@fontsource/roboto';
 import '@fontsource/playfair-display';
 import '@fontsource/mulish';
+import '@fontsource/inter';
 import theme from './styling/muiTheme.js';
 import { App } from './App';
 // import reportWebVitals from './reportWebVitals';

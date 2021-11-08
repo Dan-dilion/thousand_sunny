@@ -1,10 +1,10 @@
 import { Container, Typography, Button } from '@material-ui/core';
 
-import Animate from '../Animate/';
+import Animate from '../../../../globalComponents/Animate/';
 
 import { default as Backdrop } from './assets/new_way_graphic.svg';
-import { default as Cross } from '../../global_assets/cross_no_slant.svg';
-import { default as Circle } from '../../global_assets/circle_small.svg';
+import { default as Cross } from '../../../../global_assets/cross_no_slant.svg';
+import { default as Circle } from '../../../../global_assets/circle_small.svg';
 
 import NewWayToExploreLogic from './NewWayToExploreLogic';
 

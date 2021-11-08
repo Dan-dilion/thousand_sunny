@@ -31,9 +31,9 @@ const Header = (props) => {
               indicatorColor="secondary"
             >
               <Tab className={classes.tab} component={ Link } to="/Home" label='Home' />
-              <Tab className={classes.tab} component={ Link } to="/Destinations" label='Destinations' />
               <Tab className={classes.tab} component={ Link } to="/About" label='About' />
-              <Tab className={classes.tab} component={ Link } to="/Partner" label='Partner' />
+              <Tab className={classes.tab} component={ Link } to="/Stories" label='Stories' />
+              <Tab className={classes.tab} component={ Link } to="/Destinations" label='Destinations' />
             </Tabs>
           </Container>
           <Container className={classes.buttonContainer}>

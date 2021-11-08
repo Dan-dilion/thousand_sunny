@@ -1,10 +1,10 @@
 import { Container, Typography } from '@material-ui/core';
 
-import Animate from '../Animate/';
+import Animate from '../../../../globalComponents/Animate/';
 
 import { default as ImageSlider } from './assets/photo.jpg';
-import { default as Star } from '../../global_assets/star.svg'
-import { default as Circle } from '../../global_assets/circle_small.svg';
+import { default as Star } from '../../../../global_assets/star.svg'
+import { default as Circle } from '../../../../global_assets/circle_small.svg';
 
 import TestimonialsLogic from './TestimonialsLogic';
 

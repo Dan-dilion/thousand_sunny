@@ -9,6 +9,8 @@ const FooterLogic = () => {
   const isMedium = useMediaQuery(theme.breakpoints.between('sm', 'md'), {noSsr: true});
   const preventDefault = (event) => event.preventDefault();
 
+  console.log('Footer here! Dumpung theme: ', theme);
+
   return {
     classes,
     isSmall,

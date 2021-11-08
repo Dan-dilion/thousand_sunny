@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Container, Typography } from '@material-ui/core';
 
-import StoryCard from '../StoryCard'
-import Animate from '../Animate/';
+import StoryCard from './components/StoryCard'
+import Animate from '../../../../globalComponents/Animate/';
 
 import { default as HealingHoliday } from './assets/healing_holiday.jpg';
 import { default as KyotoResturant } from './assets/kyoto_resturant.jpg';
 import { default as Yucatan } from './assets/yucatan.jpg';
 import { default as SurfsUp } from './assets/surfs_up.jpg';
 
-import { default as Cross } from '../../global_assets/cross_no_slant.svg';
-import { default as Circle } from '../../global_assets/circle_medium.svg';
+import { default as Cross } from '../../../../global_assets/cross_no_slant.svg';
+import { default as Circle } from '../../../../global_assets/circle_medium.svg';
 
 import TrendingStoriesLogic from './TrendingStoriesLogic';
 

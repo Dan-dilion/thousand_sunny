@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Container, Typography, Card, CardActionArea, CardMedia, CardContent } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
-import Animate from '../Animate/';
-import DestinationCard from '../DestinationCard/';
+import Animate from '../../../../globalComponents/Animate/';
+import DestinationCard from './components/DestinationCard/';
 
 import { default as Raja_ampat } from './assets/Raja_ampat.jpg';
 import { default as Fanjingshan } from './assets/Fanjingshan.jpg';
 import { default as Vevey } from './assets/Vevey.jpg';
 import { default as Skadar } from './assets/Skadar.jpg';
-import { default as Cross } from '../../global_assets/cross_no_slant.svg';
-import { default as Circle } from '../../global_assets/circle_medium.svg';
+import { default as Cross } from '../../../../global_assets/cross_no_slant.svg';
+import { default as Circle } from '../../../../global_assets/circle_medium.svg';
 
 import FeaturedDestinationsLogic from './FeaturedDestinationsLogic';
 
