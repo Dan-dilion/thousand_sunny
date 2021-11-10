@@ -1,3 +1,4 @@
+import React from 'react';
 import useStyles from './StoriesStyle.js';
 import { Container } from '@material-ui/core';
 

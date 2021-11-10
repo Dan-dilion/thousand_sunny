@@ -1,25 +1,10 @@
+import React from 'react';
 import { Container } from '@material-ui/core';
 import TrackVisibility from 'react-on-screen';
 
 import Animate from '../../globalComponents/Animate';
-
+import Section1 from './components/Section1/'
 import AboutLogic from './AboutLogic.js';
-
-const Section1 = ({isVisible}) => {
-
-  // destructure logic
-  const {
-    classes
-  } = AboutLogic();
-
-  return(
-    <Container className={classes.section1}>
-      <Animate isMounted={isVisible} type="top" delay={800}>
-        <h1>About page to go here</h1>
-      </Animate>
-    </Container>
-  )
-}
 
 const About = () => {
 
@@ -29,10 +14,8 @@ const About = () => {
   } = AboutLogic();
 
   return (
-    <Container>
-      <TrackVisibility >
-        {({ isVisible }) => isVisible && <Section1 isVisible={isVisible}/> }
-      </TrackVisibility>
+    <Container className={classes.root}>
+      <Section1 className={classes.section1} isVisible={true} />
     </Container>
   )
 }

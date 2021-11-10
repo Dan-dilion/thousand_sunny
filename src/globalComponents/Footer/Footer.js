@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Paper, Typography, Link, Grid, Divider } from '@material-ui/core';
 
 import { ReactComponent as Logo } from '../../global_assets/logo.svg';

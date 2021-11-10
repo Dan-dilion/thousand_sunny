@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Typography } from '@material-ui/core';
 
 import Animate from '../../../../globalComponents/Animate/';
