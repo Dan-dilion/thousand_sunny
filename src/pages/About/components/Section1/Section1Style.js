@@ -15,14 +15,24 @@ const useStyles = makeStyles( theme => ({
     borderRadius: '10px'
   },
   imageCard: {
-    height: '30vh',
-    maxHight: '30vh',
+    height: '70vh',
+    width: '70vw',
+    margin: '15vh auto',
+    borderRadius: '20px',
+    // padding: '2em',
+    // backgroundColor: 'black',
+    // WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 48% 48%, black 40%, transparent 60%)',
+    // WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,0))',
     overflow: 'auto'
+  },
+  modalButton: {
+
+  },
+  imageModal: {
   },
   image: {
     height: 'auto',
     width: '100%',
-    // backgroundSize: 'cover',
     overflowX: 'scroll'
   }
 }));

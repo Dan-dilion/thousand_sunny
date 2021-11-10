@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Card, Modal, Backdrop, Zoom, Typography, List, ListItem } from '@material-ui/core';
+import React from 'react';
+import { Container, Card, Modal, Backdrop, Zoom, Typography, List, ListItem, Button } from '@material-ui/core';
 
 import Animate from '../../../../globalComponents/Animate';
 
@@ -16,6 +16,9 @@ const Section1 = (props) => {
     // destructure logic
     const {
       isVisible,
+      imageModalVisible,
+      imageModalOpen,
+      imageModalClose,
       classes
     } = Section1Logic(props);
 
@@ -75,12 +78,29 @@ const Section1 = (props) => {
           </Container>
         </Animate>
 
-        <Animate isMounted={isVisible} type="right" delay={500}>
-          <Card className={classes.imageCard} variant="elevated">
-            <img className={classes.image} src={Thousand_Sunny_Design} />
+        <Card elevation={0}>
+          <Button
+            className={classes.modalButton}
+            variant="contained"
+            color="primary"
+            onClick={imageModalOpen}
+          >View Original Design</Button>
 
-          </Card>
-        </Animate>
+          <Modal
+            className={classes.imageModal}
+            open={imageModalVisible}
+            onClose={imageModalClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{ timeout: 500, }}
+          >
+            <Zoom in={imageModalVisible}>
+              <Card className={classes.imageCard} onClick={imageModalClose} variant="elevated">
+                <img className={classes.image} src={Thousand_Sunny_Design} alt="File Not Found!"/>
+              </Card>
+            </Zoom>
+          </Modal>
+        </Card>
       </Card>
     )
 }
