@@ -6,9 +6,8 @@ A front end demonstration
 Greetings,
 I have fabricated Thousand Sunny using Create React App
 
-Aside from the packages installed by Create React App and the Material-UI
-library below is a summary of NPM packages that I have used:
-packages:
+Aside from the packages installed by Create React App below is a summary of NPM
+packages that I have used:
   - @material-ui/core
   - @material-ui/icons
   - react-transition-group
