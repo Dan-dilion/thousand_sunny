@@ -38,7 +38,11 @@ const useStyles = makeStyles(theme => ({
       fontSize: '.8rem',
     },
     minWidth: '8em',
-    width: '8em'
+    width: '8em',
+    borderRadius: '1rem',
+    // '&:hover': {
+    //   backgroundColor: '#fdeed6'
+    // }
   },
   buttonContainer: {
     padding: 0,

@@ -1,5 +1,5 @@
 # Thousand Sunny
-A technical exercise for Framework Design
+A front end demonstration
 
 ### [Click here](http://www.waxworlds.org/dan/thousand_sunny) to see project
 
@@ -17,6 +17,7 @@ packages:
 Fonts:
   - @fontsource/mulish
   - @fontsource/playfair-display
+  - @fontsource/inter
 
 
 # To download and run this project:

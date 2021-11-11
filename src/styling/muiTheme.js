@@ -50,6 +50,13 @@ const theme = createTheme({
       root: {
         padding: 0
       }
+    },
+    MuiListItem: {
+      button: {
+        '&:hover': {
+          backgroundColor: '#fdeed6'
+        }
+      }
     }
   },
 })

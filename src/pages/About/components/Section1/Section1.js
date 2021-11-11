@@ -8,7 +8,18 @@ import Section1Logic from './Section1Logic.js';
 import Thousand_Sunny_Design from './assets/thousand_sunny_design(1600x5588).jpeg'
 
 const ListItemLink = (props) => {
-  return <ListItem button component="a" {...props} />;
+  //Destructure Logic
+  const { classes } = Section1Logic(props);
+
+  return <ListItem
+    className={classes.listItem}
+    button={true}
+    component="a"
+    divider={true}
+    target="_blank"
+    rel="noopener noreferrer"
+    {...props}
+  />;
 }
 
 const Section1 = (props) => {
@@ -23,21 +34,36 @@ const Section1 = (props) => {
     } = Section1Logic(props);
 
     return(
-      <Card className={classes.section1} variant="outlined" outline={1}>
-        <Animate isMounted={isVisible} type="top" delay={200}>
-          <Typography className={classes.title} variant="h1">Hello and welcome</Typography>
-        </Animate>
+      <Card className={classes.section1} outline={1}>
+        <div className={classes.titleContainer}>
+          <Animate isMounted={isVisible} type="top" delay={200}>
+            <Typography className={classes.title} variant="h1">About</Typography>
+          </Animate>
+
+          <div className={classes.buttonContainer}>
+            <Animate isMounted={isVisible} type="bottom" delay={600}>
+              <Button
+                className={classes.modalButton}
+                variant="contained"
+                color="primary"
+                onClick={imageModalOpen}
+              >View Original Design</Button>
+            </Animate>
+          </div>
+        </div>
 
         <Animate isMounted={isVisible} type="left" delay={400}>
           <Typography className={classes.text} variant="h5">
-            This site is for demostration purposes only, there is no back end.
+            This site is for demonstration purposes only, there is no back end.
           </Typography>
         </Animate>
 
         <Animate isMounted={isVisible} type="right" delay={500}>
           <Typography className={classes.text} variant="h5">
-            It has been created from a given static design and encorporates the
-            following technologies:
+            It has been created from a static design provided by
+            <a href="https://www.weareframework.co.uk/" target="_blank" rel="noopener noreferrer"> Framework Design </a>.
+            The whole sight is responsive down to 300 pixels wide and
+            is built using the following third party libraries:
           </Typography>
         </Animate>
 
@@ -45,31 +71,34 @@ const Section1 = (props) => {
           <Container>
             <List className={classes.list} component="nav">
 
-              <ListItemLink href="https://www.npmjs.com/">
+              <ListItemLink href="https://www.npmjs.com/" divider={true}>
                 <Typography className={classes.text} variant="h5">
                   Node Package Manager (NPM)
                 </Typography>
               </ListItemLink>
 
-              <ListItemLink href="https://create-react-app.dev/">
+              <ListItemLink href="https://create-react-app.dev/" divider={true}>
                 <Typography className={classes.text} variant="h5">
                   Create-React-App
                 </Typography>
               </ListItemLink>
 
-              <ListItemLink href="https://reactjs.org/">
+              <ListItemLink href="https://reactjs.org/" divider={true}>
                 <Typography className={classes.text} variant="h5">
                   React
                 </Typography>
               </ListItemLink>
 
-              <ListItemLink href="https://mui.com/">
+              <ListItemLink href="https://mui.com/" divider={true}>
                 <Typography className={classes.text} variant="h5">
                   Material-UI
                 </Typography>
               </ListItemLink>
 
-              <ListItemLink href="http://reactcommunity.org/react-transition-group/">
+              <ListItemLink
+                href="http://reactcommunity.org/react-transition-group/"
+                divider={true}
+              >
                 <Typography className={classes.text} variant="h5">
                   React Transition Group
                 </Typography>
@@ -79,13 +108,6 @@ const Section1 = (props) => {
         </Animate>
 
         <Card elevation={0}>
-          <Button
-            className={classes.modalButton}
-            variant="contained"
-            color="primary"
-            onClick={imageModalOpen}
-          >View Original Design</Button>
-
           <Modal
             className={classes.imageModal}
             open={imageModalVisible}
@@ -101,6 +123,12 @@ const Section1 = (props) => {
             </Zoom>
           </Modal>
         </Card>
+
+        <Animate isMounted={isVisible} type="bottom" delay={500}>
+          <Typography className={classes.text} variant="h5">
+
+          </Typography>
+        </Animate>
       </Card>
     )
 }
