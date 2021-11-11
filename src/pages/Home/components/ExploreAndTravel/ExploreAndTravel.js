@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Typography,
@@ -9,7 +10,7 @@ import {
   MenuItem,
   Button,
   TextField,
-  InputAdornment,
+  InputAdornment
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
@@ -27,6 +28,7 @@ const ExploreAndTravel = (props) => {
   // Destructure logic
   const {
     isVisible,
+    setHeaderUnderline,
     classes,
     isSmall,
     location,
@@ -161,7 +163,15 @@ const ExploreAndTravel = (props) => {
               </Container>
             </Container>
 
-            <Button className={classes.button} variant="contained" color="primary" disableElevation={true}>Explore</Button>
+            <Button
+              className={classes.button}
+              component={Link}
+              to="./about"
+              onClick={() => setHeaderUnderline('About')}
+              variant="contained"
+              color="primary"
+              disableElevation={true}
+            >Explore</Button>
           </Container>
         </Animate>
       </div>

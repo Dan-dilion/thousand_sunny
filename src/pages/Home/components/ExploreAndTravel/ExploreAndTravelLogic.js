@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core';
 import useStyles from './ExploreAndTravelStyle.js';
 
-const ExploreAndTravelLogic = ({isVisible}) => {
+const ExploreAndTravelLogic = ({isVisible, setHeaderUnderline}) => {
 
   const classes = useStyles();
   const theme = useTheme();
@@ -51,6 +51,7 @@ const ExploreAndTravelLogic = ({isVisible}) => {
 
   return{
     isVisible,
+    setHeaderUnderline,
     classes,
     isSmall,
     location,
@@ -59,7 +60,7 @@ const ExploreAndTravelLogic = ({isVisible}) => {
     date,
     isDateFocused,
     handleDateFocus,
-    handleChange
+    handleChange,
   }
 }
 

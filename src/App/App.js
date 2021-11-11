@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { Container } from '@material-ui/core';
+import TrackVisibility from 'react-on-screen';
 
+import ScrollToTop from '../globalComponents/ScrollToTop';
 import Header from '../globalComponents/Header';
 import Home from '../pages/Home';
 import Footer from '../globalComponents/Footer';
@@ -18,35 +20,33 @@ export const App = () => {
     classes,
     headerSelection,
     setHeaderUnderline,
-    isHeaderMounted,
-    setIsHeaderMounted,
   } = AppLogic();
 
   useEffect( () => {
-    setIsHeaderMounted(true);
-    setTimeout(() => {        // Prevent wonkey underline position being set during transitioning
-      const routeName = window.location.pathname.endsWith('/')
-        ? window.location.pathname.split('/').reverse()[1]      // Select next item if path
-        : window.location.pathname.split('/').reverse()[0];     // has a '/' at the end
+    const routeName = window.location.pathname.endsWith('/')
+      ? window.location.pathname.split('/').reverse()[1]      // Don't select '/' if path
+      : window.location.pathname.split('/').reverse()[0];     // has a '/' at the end
 
-      setHeaderUnderline(routeName);
-    }, 2000);     // This delay must be >= the transition time of the header bar
-  }, [setIsHeaderMounted, setHeaderUnderline] );
+    setHeaderUnderline(routeName, true);
+  }, []); // I'm leaving the empty dependancy array because this only needs to run once
 
   return (
     <Container className={classes.root} maxWidth={false}>
       <Container className={classes.main}>
-        <Header
-          isHeaderMounted={isHeaderMounted}
-          headerSelection={headerSelection}
-          setHeaderUnderline={setHeaderUnderline}
-        />
+        <TrackVisibility partialVisibility>
+          {({isVisible}) => isVisible && <Header
+            isHeaderMounted={isVisible}
+            headerSelection={headerSelection}
+            setHeaderUnderline={setHeaderUnderline}
+          />}
+        </TrackVisibility>
 
         <Route exact path={['/Home', '/']}>
           <Home setHeaderUnderline={setHeaderUnderline} />
         </Route>
 
         <Route path={'/About'}>
+          <ScrollToTop />
           <About />
         </Route>
 

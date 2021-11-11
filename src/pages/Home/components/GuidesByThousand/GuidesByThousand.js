@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Typography, Button } from '@material-ui/core';
 
 import Animate from '../../../../globalComponents/Animate/';
@@ -15,6 +16,7 @@ const GuidesByThousand = (props) => {
   // Destructure logic
   const {
     isVisible,
+    setHeaderUnderline,
     classes
   } = GuidesByThousandLogic(props);
 
@@ -34,6 +36,9 @@ const GuidesByThousand = (props) => {
             </Typography>
             <Button
               className={classes.button}
+              component={Link}
+              to="./about"
+              onClick={() => setHeaderUnderline('about', true)}
               variant="contained"
               color="primary"
               disableElevation={true}

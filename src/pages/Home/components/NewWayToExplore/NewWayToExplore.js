@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Typography, Button } from '@material-ui/core';
 
 import Animate from '../../../../globalComponents/Animate/';
@@ -14,6 +15,7 @@ const NewWayToExplore = (props) => {
   // Destructure logic
   const {
     isVisible,
+    setHeaderUnderline,
     classes
   } = NewWayToExploreLogic(props);
 
@@ -37,7 +39,15 @@ const NewWayToExplore = (props) => {
             trip, but now, they can also let Lonely Planet Experiences
             lead the way
             </Typography>
-            <Button className={classes.button} variant="contained" color="primary" disableElevation={true}>Learn More</Button>
+            <Button
+              className={classes.button}
+              component={Link}
+              to="./about"
+              onClick={() => setHeaderUnderline('About')}
+              variant="contained"
+              color="primary"
+              disableElevation={true}
+            >Learn More</Button>
           </div>
         </Animate>
       </div>

@@ -4,16 +4,27 @@ import useStyles from './AppStyle.js';
 const AppLogic = () => {
   const classes = useStyles();
   const [ headerSelection, setHeaderSelection ] = useState('unset');
-  const [ isHeaderMounted, setIsHeaderMounted ] = useState(false);
 
-  const setHeaderUnderline = (routeName) => {
+  const setHeaderUnderline = (routeName, delay = false) => {
+
+    const imposeDelay = (callback) => {
+      setTimeout(() => {
+        callback();
+      }, (delay ? 2500 : 0));
+    }
+
     switch (routeName) {
-      case 'Home': setHeaderSelection(0); break;
-      case 'thousand_sunny': setHeaderSelection(0); break;
-      case '': setHeaderSelection(0); break;
-      case 'About': setHeaderSelection(1); break;
-      case 'Stories': setHeaderSelection(2); break;
-      case 'Destinations': setHeaderSelection(3); break;
+      case 'home':
+      case 'Home': imposeDelay(() => setHeaderSelection(0)); break;
+      case 'thousand_sunny':
+      case 'Thousand_sunny': imposeDelay(() => setHeaderSelection(0)); break;
+      case '': imposeDelay(() => setHeaderSelection(0)); break;
+      case 'about':
+      case 'About': imposeDelay(() => setHeaderSelection(1)); break;
+      case 'stories':
+      case 'Stories': imposeDelay(() => setHeaderSelection(2)); break;
+      case 'destinations':
+      case 'Destinations': imposeDelay(() => setHeaderSelection(3)); break;
       default: break;
     }
   };
@@ -22,8 +33,6 @@ const AppLogic = () => {
     classes,
     headerSelection,
     setHeaderUnderline,
-    isHeaderMounted,
-    setIsHeaderMounted,
   };
 }
 

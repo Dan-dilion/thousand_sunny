@@ -66,7 +66,7 @@ const Section1 = (props) => {
               It has been created from a static design provided by
               <a href="https://www.weareframework.co.uk/" target="_blank" rel="noopener noreferrer"> Framework Design </a>.
               The whole site is responsive down to 300 pixels wide and
-              is built using the following third party libraries:
+              is built using the following libraries:
             </Typography>
           </Animate>
 

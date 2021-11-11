@@ -24,11 +24,17 @@ const Home = (props) => {
   return(
     <Container className={classes.root}>
       <TrackVisibility className={classes.exploreAndTravel} partialVisibility>
-        {({ isVisible }) => isVisible && <ExploreAndTravel isVisible={isVisible} /> }
+        {({ isVisible }) => isVisible && <ExploreAndTravel
+          isVisible={isVisible}
+          setHeaderUnderline={setHeaderUnderline}
+        /> }
       </TrackVisibility>
 
       <TrackVisibility className={classes.newWayToExplore} offset={VISIBILITY_OFFSET}>
-        {({ isVisible }) => isVisible && <NewWayToExplore isVisible={isVisible} /> }
+        {({ isVisible }) => isVisible && <NewWayToExplore
+          isVisible={isVisible}
+          setHeaderUnderline={setHeaderUnderline}
+        /> }
       </TrackVisibility>
 
       <TrackVisibility className={classes.featuredDestinations} partialVisibility>
@@ -36,7 +42,9 @@ const Home = (props) => {
       </TrackVisibility>
 
       <TrackVisibility className={classes.guidesByThousand} partialVisibility>
-        {({ isVisible }) => isVisible && <GuidesByThousand isVisible={isVisible} /> }
+        {({ isVisible }) => isVisible && <GuidesByThousand
+        isVisible={isVisible} setHeaderUnderline={setHeaderUnderline}
+      /> }
       </TrackVisibility>
 
       <TrackVisibility className={classes.testimonials} partialVisibility>
