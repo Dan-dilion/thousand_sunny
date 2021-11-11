@@ -3,18 +3,30 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles( theme => ({
   section1: {
     margin: '2em',
-    padding: '1em',
+    padding: '3em',
     borderRadius: '15px',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      padding: 0
+    },
   },
-  titleContainer: {
+  titleRow: {
     display: 'flex',
     justifyContent: 'space-between',
     flexWrap: 'wrap'
   },
+  titleContainer: {
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      width: '100%',
+    }
+  },
   title: {
-    fontFamily: ['"mulish"'].join(','),
+    // marginRight: 'auto',
+    fontFamily: ['"Playfair Display"'].join(','),
+    fontWeight: '800',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       fontSize: '3rem',
+      // margin: '0 auto',
+      textAlign: 'center',
     },
     [theme.breakpoints.between('sm', 'md')]: {
       fontSize: '5rem',
@@ -27,27 +39,45 @@ const useStyles = makeStyles( theme => ({
     }
   },
   buttonContainer: {
-    margin: 'auto'
+    display: 'flex',
+    margin: 'auto 0',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      height: '2rem',
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
   modalButton: {
     maxHeight: '60%',
+    padding: '0.5rem',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      fontSize: '0.6rem',
+      fontSize: '0.5rem',
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '0.8rem',
+      fontSize: '0.5rem',
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '1rem',
+      fontSize: '0.8rem',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '1.2rem',
+      fontSize: '1rem',
     }
+  },
+  bodyContainr: {
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      padding: 0
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      padding: '0.2rem'
+    },
   },
   text: {
     fontFamily: ['"mulish"'].join(','),
+    lineHeight: '2',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       fontSize: '0.6rem',
+      lineHeight: '1.7',
     },
     [theme.breakpoints.between('sm', 'md')]: {
       fontSize: '0.8rem',
