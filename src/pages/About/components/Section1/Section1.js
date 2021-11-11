@@ -49,7 +49,7 @@ const Section1 = (props) => {
                 variant="contained"
                 color="primary"
                 onClick={imageModalOpen}
-              >View Design</Button>
+              >Original Design</Button>
             </Animate>
           </div>
         </div>

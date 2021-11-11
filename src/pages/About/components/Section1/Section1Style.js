@@ -29,13 +29,13 @@ const useStyles = makeStyles( theme => ({
       textAlign: 'center',
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '5rem',
+      fontSize: '4rem',
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '6rem',
+      fontSize: '5rem',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '7rem',
+      fontSize: '6rem',
     }
   },
   buttonContainer: {
