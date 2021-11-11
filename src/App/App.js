@@ -35,7 +35,7 @@ export const App = () => {
       <Container className={classes.main}>
         <TrackVisibility partialVisibility>
           {({isVisible}) => isVisible && <Header
-            isHeaderMounted={isVisible}
+            isVisible={isVisible}
             headerSelection={headerSelection}
             setHeaderUnderline={setHeaderUnderline}
           />}

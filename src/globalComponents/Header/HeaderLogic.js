@@ -1,6 +1,6 @@
 import useStyles from './HeaderStyle';
 
-const HeaderLogic = ({isHeaderMounted, headerSelection, setHeaderUnderline}) => {
+const HeaderLogic = ({isVisible, headerSelection, setHeaderUnderline}) => {
 
   const classes = useStyles();
 
@@ -15,7 +15,7 @@ const HeaderLogic = ({isHeaderMounted, headerSelection, setHeaderUnderline}) => 
 
   return {
     classes,
-    isHeaderMounted,
+    isVisible,
     headerSelection,
     handleChange
   }

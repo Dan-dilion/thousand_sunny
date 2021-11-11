@@ -12,7 +12,7 @@ const Header = (props) => {
   // Destructure logic
   const {
     classes,
-    isHeaderMounted,
+    isVisible,
     headerSelection,
     handleChange
   } = HeaderLogic(props);
@@ -20,10 +20,10 @@ const Header = (props) => {
 
   return(
     <Container className={classes.root}>
-      <Animate isMounted={isHeaderMounted} type="top" delay={1000}>
+      <Animate isMounted={isVisible} type="top" delay={1000}>
         <Logo className={classes.logo}/>
       </Animate>
-      <Animate isMounted={isHeaderMounted} type="bottom" delay={1200}>
+      <Animate isMounted={isVisible} type="bottom" delay={1200}>
         <Container className={classes.menuBar}>
           <Container className={classes.tabContainer}>
             <Tabs

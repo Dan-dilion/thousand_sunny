@@ -13,6 +13,8 @@ const AppLogic = () => {
       }, (delay ? 2500 : 0));
     }
 
+    if ( delay ) setHeaderSelection(null);
+
     switch (routeName) {
       case 'home':
       case 'Home': imposeDelay(() => setHeaderSelection(0)); break;
