@@ -43,7 +43,7 @@ const NewWayToExplore = (props) => {
               className={classes.button}
               component={Link}
               to="./about"
-              onClick={() => setHeaderUnderline('About')}
+              onClick={() => setHeaderUnderline('About', true)}
               variant="contained"
               color="primary"
               disableElevation={true}

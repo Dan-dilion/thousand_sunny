@@ -37,7 +37,7 @@ const TrendingStories = (props) => {
               className={classes.ViewAll}
               component={Link}
               to="/Stories"
-              onClick={() => setHeaderUnderline('Stories')}
+              onClick={() => setHeaderUnderline('Stories', true)}
             >
               View all >
             </Typography>

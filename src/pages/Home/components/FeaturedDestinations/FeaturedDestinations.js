@@ -35,7 +35,7 @@ const FeaturedDestinations = (props) => {
               className={classes.ViewAll}
               component={Link}
               to="/Destinations"
-              onClick={() => setHeaderUnderline('Destinations')}
+              onClick={() => setHeaderUnderline('Destinations', true)}
             >
               View all >
             </Typography>

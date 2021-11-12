@@ -64,7 +64,15 @@ const Section1 = (props) => {
           <Animate isMounted={isVisible} type="right" delay={500}>
             <Typography className={classes.text} variant="h5">
               It has been created from a static design provided by
-              <a href="https://www.weareframework.co.uk/" target="_blank" rel="noopener noreferrer"> Framework Design </a>.
+              <Button
+                className={classes.frameworkLink}
+                component="a"
+                variant="text"
+                color="primary"
+                href="https://www.weareframework.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              > Framework Design </Button>.
               The whole site is responsive down to 300 pixels wide and
               is built using the following libraries:
             </Typography>
