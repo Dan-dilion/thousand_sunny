@@ -89,15 +89,6 @@ const useStyles = makeStyles( theme => ({
       fontSize: '1.2rem',
     }
   },
-  frameworkLink: {
-    fontFamily: ['"mulish"'].join(','),
-    fontWeight: '800',
-    color: theme.palette.primary,
-    textTransform: 'none',
-    '&:hover': {
-      backgroundColor: '#fdeed6'
-    }
-  },
   list: {
     fontFamily: ['"mulish"'].join(','),
     // width: '50%',

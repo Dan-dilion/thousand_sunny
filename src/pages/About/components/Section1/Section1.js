@@ -1,5 +1,15 @@
 import React from 'react';
-import { Container, Card, Modal, Backdrop, Zoom, Typography, List, ListItem, Button } from '@material-ui/core';
+import {
+  Container,
+  Card,
+  Modal,
+  Backdrop,
+  Zoom,
+  Typography,
+  List,
+  ListItem,
+  Button
+} from '@material-ui/core';
 
 import Animate from '../../../../globalComponents/Animate';
 
@@ -40,7 +50,7 @@ const Section1 = (props) => {
             <Animate isMounted={isVisible} type="top" delay={200}>
               <Typography className={classes.title} variant="h1">About</Typography>
             </Animate>
-        </div>
+          </div>
 
           <div className={classes.buttonContainer}>
             <Animate isMounted={isVisible} type="bottom" delay={600}>
@@ -63,16 +73,7 @@ const Section1 = (props) => {
 
           <Animate isMounted={isVisible} type="right" delay={500}>
             <Typography className={classes.text} variant="h5">
-              It has been created from a static design provided by
-              <Button
-                className={classes.frameworkLink}
-                component="a"
-                variant="text"
-                color="primary"
-                href="https://www.weareframework.co.uk/"
-                target="_blank"
-                rel="noopener noreferrer"
-              > Framework Design </Button>.
+              It has been created from a static design provided by a third party.
               The whole site is responsive down to 300 pixels wide and
               is built using the following libraries:
             </Typography>
@@ -81,12 +82,6 @@ const Section1 = (props) => {
           <Animate isMounted={isVisible} type="left" delay={500}>
             <Container>
               <List className={classes.list} component="nav">
-
-                <ListItemLink href="https://www.npmjs.com/" divider={true}>
-                  <Typography className={classes.text} variant="h5">
-                    Node Package Manager (NPM)
-                  </Typography>
-                </ListItemLink>
 
                 <ListItemLink href="https://create-react-app.dev/" divider={true}>
                   <Typography className={classes.text} variant="h5">

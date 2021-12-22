@@ -3,10 +3,9 @@ A front end demonstration
 
 ### [Click here](http://www.waxworlds.org/dan/thousand_sunny) to see project
 
-Greetings,
-I have fabricated Thousand Sunny using Create React App
+This project was created using Create React App
 
-Aside from the packages installed by Create React App below is a summary of NPM
+Aside from the packages installed by Create React App, below is a summary of NPM
 packages that I have used:
   - @material-ui/core
   - @material-ui/icons
@@ -36,5 +35,5 @@ The project should open up automatically in your default browser
      change the `homepage` value to `/subdirectory/thousand_sunny`
   3. Run the following command:
      `npm run build`
-  4. Finally copy the contents of the newly created `/build` directory to your
+  4. Finally, copy the contents of the newly created `/build` directory to your
      deployment directory on your server
