@@ -69,6 +69,11 @@ const Section1 = (props) => {
             <Typography className={classes.text} variant="h5">
               This site is for demonstration purposes only, there is no back end.
             </Typography>
+            <Typography className={classes.text} variant="h5">
+              <a href="https://github.com/Dan-dilion/thousand_sunny"
+                target="_blank" rel="noreferrer"
+              > Download the source code here</a>.
+            </Typography>
           </Animate>
 
           <Animate isMounted={isVisible} type="right" delay={500}>
