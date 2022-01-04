@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme => ({
       height: '70vw'
     },
     [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
-      height: '40vw'
+      height: '40vw',
+      marginBottom: '8em'
     }
   },
   featuredDestinations: {

@@ -21,7 +21,7 @@ const Testimonials = (props) => {
     <Container className={classes.root}>
 
       <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={isVisible} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={400}>
           <Typography className={classes.title}>
             Testimonials
           </Typography>
@@ -54,7 +54,7 @@ const Testimonials = (props) => {
       </div>
 
       <div className={classes.rightPanel}>
-        <Animate isMounted={isVisible} type="right" delay={600}>
+        <Animate isMounted={isVisible} type="right" delay={400}>
           <img className={classes.imageSlider} src={ImageSlider} alt="ImageSlider" />
         </Animate>
       </div>

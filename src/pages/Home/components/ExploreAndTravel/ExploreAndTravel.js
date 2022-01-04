@@ -43,7 +43,7 @@ const ExploreAndTravel = (props) => {
   return(
     <Container className={classes.root}>
       <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={isVisible} type="left" delay={500}>
+        <Animate isMounted={isVisible} type="left" delay={300}>
           <Container className={classes.leftPanel}>
             <Typography className={classes.title}>
               Explore and Travel

@@ -10,7 +10,7 @@ const AppLogic = () => {
     const imposeDelay = (callback) => {
       setTimeout(() => {
         callback();
-      }, (delay ? 2500 : 0));
+      }, (delay ? 1700 : 0));
     }
 
     if ( delay ) setHeaderSelection(null);

@@ -20,10 +20,10 @@ const Header = (props) => {
 
   return(
     <Container className={classes.root}>
-      <Animate isMounted={isVisible} type="top" delay={1000}>
+      <Animate isMounted={isVisible} type="top" delay={700}>
         <Logo className={classes.logo}/>
       </Animate>
-      <Animate isMounted={isVisible} type="bottom" delay={1200}>
+      <Animate isMounted={isVisible} type="fade" delay={900}>
         <Container className={classes.menuBar}>
           <Container className={classes.tabContainer}>
             <Tabs

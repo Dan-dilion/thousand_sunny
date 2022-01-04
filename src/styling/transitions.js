@@ -1,4 +1,4 @@
-const duration = 1000;
+const duration = 700;
 
 export const commonStyle = {
   position: 'relative',

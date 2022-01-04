@@ -24,7 +24,7 @@ const GuidesByThousand = (props) => {
     <Container className={classes.root}>
 
       <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={isVisible} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={400}>
           <div className={classes.leftPanel}>
             <Typography className={classes.title}>
               Guides By Thousand Sunny
@@ -48,13 +48,13 @@ const GuidesByThousand = (props) => {
       </div>
 
       <div className={classes.rightPanel}>
-        <Animate isMounted={isVisible} type="right" delay={600}>
+        <Animate isMounted={isVisible} type="right" delay={400}>
           <img className={classes.backdrop} src={Backdrop} alt="Backdrop" />
         </Animate>
       </div>
 
       <div className={classes.decalContainer}>
-        <Animate isMounted={isVisible} type="fade" delay={1000}>
+        <Animate isMounted={isVisible} type="fade" delay={600}>
           <img className={classes.cross} src={Cross} alt="Cross"/>
           <img className={classes.crossRight} src={CrossRight} alt="Cross_right"/>
           <img className={classes.circle} src={Circle} alt="Circle"/>

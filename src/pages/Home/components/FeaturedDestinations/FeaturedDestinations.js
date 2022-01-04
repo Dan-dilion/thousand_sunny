@@ -26,7 +26,7 @@ const FeaturedDestinations = (props) => {
   return(
     <Container className={classes.root}>
       <div className={classes.toplineWrapper}>
-        <Animate isMounted={isVisible} type="top" delay={800}>
+        <Animate isMounted={isVisible} type="top" delay={600}>
           <Container className={classes.topLine}>
             <Typography className={classes.title}>
               Featured Destinations
@@ -55,7 +55,7 @@ const FeaturedDestinations = (props) => {
             />
 
           </Animate>
-          <Animate isMounted={isVisible} type="top" delay={400}>
+          <Animate isMounted={isVisible} type="top" delay={200}>
             <DestinationCard
               Image={Fanjingshan}
               alt="Fanjingshan - China"
@@ -66,17 +66,17 @@ const FeaturedDestinations = (props) => {
         </Container>
 
         <Container className={classes.bottomImages}>
-          <Animate isMounted={isVisible} type="bottom" delay={400}>
+          <Animate isMounted={isVisible} type="bottom" delay={200}>
             <DestinationCard Image={Vevey} alt="Vevey - Switzerland" title="Vevey" text="Switzerland" />
           </Animate>
-          <Animate isMounted={isVisible} type="right" delay={600}>
+          <Animate isMounted={isVisible} type="right" delay={400}>
             <DestinationCard Image={Skadar} alt="Skadar - Montenegro" title="Skadar" text="Montenegro" />
           </Animate>
         </Container>
       </Container>
 
       <Container className={classes.decalContainer}>
-        <Animate isMounted={isVisible} type="fade" delay={1400}>
+        <Animate isMounted={isVisible} type="fade" delay={1000}>
           <img className={classes.cross} src={Cross} alt="Cross" />
           <img className={classes.circle1} src={Circle} alt="Circle1" />
           <img className={classes.circle2} src={Circle} alt="Circle2" />

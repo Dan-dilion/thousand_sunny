@@ -22,7 +22,7 @@ const NewWayToExplore = (props) => {
   return(
     <Container className={classes.root}>
       <div className={classes.leftPanel}>
-        <Animate isMounted={isVisible} type="left" delay={600}>
+        <Animate isMounted={isVisible} type="left" delay={400}>
           <img className={classes.backdrop} src={Backdrop} alt="Backdrop" />
         </Animate>
       </div>

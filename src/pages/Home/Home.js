@@ -37,7 +37,7 @@ const Home = (props) => {
         /> }
       </TrackVisibility>
 
-      <TrackVisibility className={classes.featuredDestinations} partialVisibility>
+      <TrackVisibility className={classes.featuredDestinations} offset={VISIBILITY_OFFSET}>
         {({ isVisible }) => isVisible && <FeaturedDestinations isVisible={isVisible} setHeaderUnderline={setHeaderUnderline} /> }
       </TrackVisibility>
 
