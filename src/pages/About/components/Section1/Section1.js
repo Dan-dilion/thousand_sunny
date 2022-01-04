@@ -53,7 +53,7 @@ const Section1 = (props) => {
           </div>
 
           <div className={classes.buttonContainer}>
-            <Animate isMounted={isVisible} type="bottom" delay={600}>
+            <Animate isMounted={isVisible} type="bottom" delay={1200}>
               <Button
                 className={classes.modalButton}
                 variant="contained"
@@ -65,7 +65,7 @@ const Section1 = (props) => {
         </div>
 
         <Container className={classes.bodyContainer} maxWidth={false}>
-          <Animate isMounted={isVisible} type="left" delay={400}>
+          <Animate isMounted={isVisible} type="left" delay={300}>
             <Typography className={classes.text} variant="h5">
               This site is for demonstration purposes only, there is no back end.
             </Typography>
@@ -76,15 +76,22 @@ const Section1 = (props) => {
             </Typography>
           </Animate>
 
-          <Animate isMounted={isVisible} type="right" delay={500}>
+          <Animate isMounted={isVisible} type="right" delay={600}>
             <Typography className={classes.text} variant="h5">
               It has been created from a static design provided by a third party.
-              The whole site is responsive down to 300 pixels wide and
-              is built using the following libraries:
+              The whole site is responsive down to 300 pixels wide. To view the
+              layout originally specified in the design make sure your browser
+              window is at least 960 pixels wide.
             </Typography>
           </Animate>
 
-          <Animate isMounted={isVisible} type="left" delay={500}>
+          <Animate isMounted={isVisible} type="left" delay={900}>
+            <Typography className={classes.text} variant="h5">
+              This project was built using the following libraries:
+            </Typography>
+          </Animate>
+
+          <Animate isMounted={isVisible} type="right" delay={1200}>
             <Container>
               <List className={classes.list} component="nav">
 
