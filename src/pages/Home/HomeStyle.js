@@ -61,13 +61,14 @@ const useStyles = makeStyles(theme => ({
       height: '70vw'
     },
     [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
-      height: '40vw'
+      height: '40vw',
+      marginBottom: '5rem'
     }
   },
   testimonials: {
     // border: '2px solid cyan',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      height: '70vw'
+      height: '60vw'
     },
     [theme.breakpoints.up(theme.breakpoints.values['sm'])]: {
       height: '40vw',
@@ -77,7 +78,8 @@ const useStyles = makeStyles(theme => ({
   trendingStories: {
     // border: '2px solid blue',
     [theme.breakpoints.down('xs')]: {
-      height: '140vw'
+      height: '125vw',
+      marginTop: '10%'
     },
     [theme.breakpoints.between('xs', 'sm')]: {
       height: '100vw'

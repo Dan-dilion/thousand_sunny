@@ -1,10 +1,11 @@
-import React from 'react';
-import { Container, Typography } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { Container } from '@material-ui/core';
 
 import Animate from '../../../../globalComponents/Animate/';
+import ImageSlider from '../../../../globalComponents/ImageSlider/';
+import Review from './components/Review/';
+import ImagePanel from './components/ImagePanel/'
 
-import { default as ImageSlider } from './assets/photo.jpg';
-import { default as Star } from '../../../../global_assets/star.svg'
 import { default as Circle } from '../../../../global_assets/circle_small.svg';
 
 import TestimonialsLogic from './TestimonialsLogic';
@@ -14,49 +15,58 @@ const Testimonials = (props) => {
   // Destructure logic
   const {
     isVisible,
-    classes
+    classes,
+    imageTransitionList,
+    reviewTransitionList,
+    nextAction,
+    prevAction,
+    prevButtonDisabled,
+    nextButtonDisabled,
+    setNextButtonDisabled,
+    setPrevButtonDisabled,
+    currentSlide,
+    images
   } = TestimonialsLogic(props);
+
+  useEffect(() => {
+    console.log('Initial Current Slide: ', currentSlide);
+    setNextButtonDisabled(currentSlide === images.length -1 ? true : false);
+    setPrevButtonDisabled(currentSlide === 0 ? true : false);
+  }, [imageTransitionList]);
 
   return(
     <Container className={classes.root}>
 
-      <div className={classes.leftPanelWrapper}>
-        <Animate isMounted={isVisible} type="left" delay={400}>
-          <Typography className={classes.title}>
-            Testimonials
-          </Typography>
+      <div className={classes.wrapper}>
 
-          <div className={classes.leftPanel}>
+        <div className={classes.review}>
+          <Animate isMounted={isVisible} type="left" delay={400}>
+            <ImageSlider
+              items={reviewTransitionList}
+              ReturnComponent={Review}
+              transitionStyle="slideOut"
+              extraProps={{}}
+            />
+          </Animate>
+        </div>
 
-            <Container className={classes.stars}>
-              <img className={classes.star} src={Star} alt="Star" />
-              <img className={classes.star} src={Star} alt="Star" />
-              <img className={classes.star} src={Star} alt="Star" />
-              <img className={classes.star} src={Star} alt="Star" />
-              <img className={classes.star} src={Star} alt="Star" />
-            </Container>
+        <div className={classes.imagePanel}>
+          <Animate isMounted={isVisible} type="right" delay={400}>
+            <ImageSlider
+              items={imageTransitionList}
+              ReturnComponent={ImagePanel}
+              transitionStyle="slideIn"
+              extraProps={{
+                isVisible: isVisible,
+                nextAction: nextAction,
+                prevAction: prevAction,
+                prevButtonDisabled: prevButtonDisabled,
+                nextButtonDisabled: nextButtonDisabled
+              }}
+            />
+          </Animate>
+        </div>
 
-            <Typography className={classes.text}>
-            “Quisque in lacus a urna fermentum
-            euismod. Integer mi nibh, dapibus ac
-            scelerisque eu, facilisis quis purus. Morbi
-            blandit sit amet turpis nec”
-            </Typography>
-
-            <Typography className={classes.authorName}>
-              Edward Newgate
-            </Typography>
-            <Typography className={`${classes.authorName} ${classes.authorOrganisation}`}>
-              Founder Circle
-            </Typography>
-          </div>
-        </Animate>
-      </div>
-
-      <div className={classes.rightPanel}>
-        <Animate isMounted={isVisible} type="right" delay={400}>
-          <img className={classes.imageSlider} src={ImageSlider} alt="ImageSlider" />
-        </Animate>
       </div>
 
       <div className={classes.decalContainer}>

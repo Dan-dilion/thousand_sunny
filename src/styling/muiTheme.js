@@ -46,6 +46,14 @@ const theme = createTheme({
         fontWeight: '600'
       }
     },
+    MuiIconButton: {
+      root: {
+        padding: '4px'
+      },
+      label: {
+        height: '100%'
+      }
+    },
     MuiCardContent: {
       root: {
         padding: 0
