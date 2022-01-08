@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Typography } from '@material-ui/core';
-import Animate from '../../../../../../globalComponents/Animate/';
 
-import { default as Star } from '../../assets/star.svg'
 
 import ReviewLogic from './ReviewLogic.js';
 
 
-const review = (props) => {
+const Review = (props) => {
   // De-structure logic
   const {
-    classes
+    classes,
+    content,
+    starDropper,
+    stars
   } = ReviewLogic(props);
 
+  const {
+    numOfStars,
+    text,
+    authName,
+    authOrganisation
+  } = content;
+
+  useEffect(() => {
+    starDropper(numOfStars);
+  }, [])
+
   return (
-    <>
+    <div className={classes.root}>
       <Typography className={classes.title}>
         Testimonials
       </Typography>
@@ -22,29 +34,22 @@ const review = (props) => {
       <div className={classes.leftPanel}>
 
         <Container className={classes.stars}>
-          <img className={classes.star} src={Star} alt="Star" />
-          <img className={classes.star} src={Star} alt="Star" />
-          <img className={classes.star} src={Star} alt="Star" />
-          <img className={classes.star} src={Star} alt="Star" />
-          <img className={classes.star} src={Star} alt="Star" />
+          {stars}
         </Container>
 
         <Typography className={classes.text}>
-          “Quisque in lacus a urna fermentum
-          euismod. Integer mi nibh, dapibus ac
-          scelerisque eu, facilisis quis purus. Morbi
-          blandit sit amet turpis nec”
+          {text}
         </Typography>
 
         <Typography className={classes.authorName}>
-          Edward Newgate
+          {authName}
         </Typography>
         <Typography className={`${classes.authorName} ${classes.authorOrganisation}`}>
-          Founder Circle
+          {authOrganisation}
         </Typography>
       </div>
-    < />
+    </div>
   );
 };
 
-export default review;
+export default Review;

@@ -48,10 +48,33 @@ const useStyles = makeStyles(theme => ({
     height: '100%'
   },
   nextPrevButtons: {
-    height: '100%',
+    height: '85%',
     [theme.breakpoints.up('xl')]: {
       padding: '6px'
     }
+  },
+  decalContainer: {
+    display: 'none',
+    border: '2px solid red',
+    position: 'absolute',
+    width: '100%',
+    height: '30vw',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      height: '40vw',
+    },
+    marginTop: 'auto',
+    marginBottom: 'auto'
+  },
+  circle: {
+    position: 'absolute',
+    top: '-20px',
+    right: '-20px',
+    zIndex: -1
+  },
+  cross: {
+    position: 'absolute',
+    bottom: '-15px',
+    left: '-15px',
   }
 }));
 

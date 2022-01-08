@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   review: {
-    maxWidth: '40%',
+    width: '80%',
     // border: '2px solid cyan',
     display: 'flex',
     flexDirection: 'column',

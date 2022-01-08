@@ -3,7 +3,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 
 import { transitions, sliderCommonStyle } from '../../styling/transitions.js';
 
-const ImageSlider = ({ items, ReturnComponent, extraProps }) => {
+const ImageSlider = ({ items, ReturnComponent, transitionStyle, extraProps }) => {
   return(
     <div
       style={{
@@ -25,10 +25,10 @@ const ImageSlider = ({ items, ReturnComponent, extraProps }) => {
               <div
                 style={{
                   ...sliderCommonStyle,
-                  ...transitions['slideIn'][state]
+                  ...transitions[transitionStyle][state]
                 }}
               >
-                <ReturnComponent id={id} content={content} extraProps={extraProps} />
+                <ReturnComponent content={content} extraProps={extraProps} />
               </div>
             )}
           </Transition>

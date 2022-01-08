@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    position: 'relative',
+    maxWidth: '100%',
+  },
   leftPanel: {
     // border: '2px solid blue',
     width: '100%',

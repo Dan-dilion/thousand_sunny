@@ -69,5 +69,11 @@ export const transitions = {
     entered:  { opacity: 1, transform: 'scale(1)'},
     exiting:  { opacity: 0, transform: 'scale(1.2)'},
     exited:  { opacity: 1, transform: 'scale(1)'},
+  },
+  slideOut: {
+    entering: { opacity: 0, transform: 'scale(2)'},
+    entered:  { opacity: 1, transform: 'scale(1)'},
+    exiting:  { opacity: 0, transform: 'scale(0.7)'},
+    exited:  { opacity: 1, transform: 'scale(1)'},
   }
 };

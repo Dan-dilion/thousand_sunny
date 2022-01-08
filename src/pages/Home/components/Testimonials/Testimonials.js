@@ -17,6 +17,7 @@ const Testimonials = (props) => {
     isVisible,
     classes,
     imageTransitionList,
+    reviewTransitionList,
     nextAction,
     prevAction,
     prevButtonDisabled,
@@ -40,7 +41,12 @@ const Testimonials = (props) => {
 
         <div className={classes.review}>
           <Animate isMounted={isVisible} type="left" delay={400}>
-            <Review />
+            <ImageSlider
+              items={reviewTransitionList}
+              ReturnComponent={Review}
+              transitionStyle="slideOut"
+              extraProps={{}}
+            />
           </Animate>
         </div>
 
@@ -49,7 +55,9 @@ const Testimonials = (props) => {
             <ImageSlider
               items={imageTransitionList}
               ReturnComponent={ImagePanel}
+              transitionStyle="slideIn"
               extraProps={{
+                isVisible: isVisible,
                 nextAction: nextAction,
                 prevAction: prevAction,
                 prevButtonDisabled: prevButtonDisabled,

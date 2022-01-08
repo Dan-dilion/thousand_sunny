@@ -1,7 +1,7 @@
 import useStyles from './ImagePanelStyle.js';
 
 const ImagePanelLogic = ({
-  content,
+  content,  // The image
   alt = 'File Not Found',
   extraProps
 }) => {
@@ -9,6 +9,7 @@ const ImagePanelLogic = ({
 
   const {
     imagePosition = 'top',
+    isVisible,
     prevAction,
     nextAction,
     nextButtonDisabled,
@@ -17,7 +18,8 @@ const ImagePanelLogic = ({
 
   return {
     classes,
-    content,
+    isVisible,
+    content,    // the image
     alt,
     imagePosition,
     nextAction,
