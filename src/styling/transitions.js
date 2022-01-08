@@ -16,6 +16,23 @@ export const commonStyle = {
   opacity: 0,
 }
 
+export const sliderCommonStyle = {
+  position: 'absolute',
+  display: 'flex',
+  padding: 0,
+  margin: 0,
+  height: '100%',
+  transition: `
+    opacity ${duration}ms ease-out,
+    transform ${duration}ms ease-out,
+    left ${duration}ms ease-out,
+    right ${duration}ms ease-out,
+    top ${duration}ms ease-out,
+    bottom ${duration}ms ease-out
+  `,
+  opacity: 0,
+};
+
 export const transitions = {
   top: {
     entering: { opacity: 1, transform: 'scale(0.8)', top: '1vw', left: '1vw'},
@@ -46,5 +63,11 @@ export const transitions = {
     entered:  { opacity: 1 },
     exiting:  { opacity: 0 },
     exited:  { opacity: 0 },
+  },
+  slideIn: {
+    entering: { opacity: 0, transform: 'scale(0.1)'},
+    entered:  { opacity: 1, transform: 'scale(1)'},
+    exiting:  { opacity: 0, transform: 'scale(1.2)'},
+    exited:  { opacity: 1, transform: 'scale(1)'},
   }
 };
