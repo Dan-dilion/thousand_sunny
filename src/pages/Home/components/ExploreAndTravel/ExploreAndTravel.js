@@ -157,6 +157,7 @@ const ExploreAndTravel = (props) => {
                         root: classes.dateInputLabel
                       }
                     }}
+                    label="Date"
                   />
                 </FormControl>
               </Container>
