@@ -80,6 +80,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     bottom: '-15px',
     left: '-15px',
+    zIndex: 2
   }
 }));
 
