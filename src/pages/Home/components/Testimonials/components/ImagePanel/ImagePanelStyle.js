@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
   },
   media: {
     height: '30vw',
+    maxHeight: '560px',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       height: '40vw',
     }
@@ -66,6 +67,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     width: '100%',
     height: '30vw',
+    maxHeight: '560px',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       height: '40vw',
     }
