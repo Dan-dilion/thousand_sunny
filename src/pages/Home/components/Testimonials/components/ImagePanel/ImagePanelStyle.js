@@ -54,22 +54,27 @@ const useStyles = makeStyles(theme => ({
     }
   },
   decalContainer: {
-    display: 'none',
-    border: '2px solid red',
+    // border: '2px solid red',
+    // display: 'none',
+    // top: '50%',
+    // transform: 'translateY(-50%)',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    margin: 'auto',
     position: 'absolute',
     width: '100%',
     height: '30vw',
     [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
       height: '40vw',
-    },
-    marginTop: 'auto',
-    marginBottom: 'auto'
+    }
   },
   circle: {
     position: 'absolute',
-    top: '-20px',
+    top: '-15px',
     right: '-20px',
-    zIndex: -1
+    zIndex: -2
   },
   cross: {
     position: 'absolute',

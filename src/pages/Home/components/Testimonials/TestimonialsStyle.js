@@ -37,24 +37,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     maxWidth: '35%',
     padding: 0,
-  },
-  decalContainer: {
-    // border: '2px solid purple',
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    zIndex: -1
-  },
-  circle: {
-    position: 'absolute',
-    height: '1vw',
-    top: '55%',
-    left: '-8%',
-    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
-      opacity: .7,
-      left: '-4%',
-      height: '2vw',
-    }
   }
 }))
 

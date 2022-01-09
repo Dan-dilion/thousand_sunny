@@ -81,6 +81,25 @@ const useStyles = makeStyles(theme => ({
   authorOrganisation: {
     color: theme.palette.grey['400'],
   },
+  decalContainer: {
+    // border: '2px solid purple',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    zIndex: -1
+  },
+  circle: {
+    position: 'absolute',
+    height: '1vw',
+    top: '55%',
+    left: '-8%',
+    [theme.breakpoints.down(theme.breakpoints.values['sm'])]: {
+      opacity: .7,
+      left: '-4%',
+      height: '2vw',
+    }
+  }
 }));
 
 export default useStyles;

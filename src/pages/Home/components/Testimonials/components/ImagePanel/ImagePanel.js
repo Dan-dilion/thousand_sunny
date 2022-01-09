@@ -72,10 +72,8 @@ const ImagePanel = (props) => {
       </Card>
 
       <div className={classes.decalContainer}>
-        <Animate isMounted={isVisible} type="fade" delay={1000}>
-          <img className={classes.circle} src={Circle} alt="Circle"/>
-          <img className={classes.cross} src={Cross} alt="Cross"/>
-        </Animate>
+        <img className={classes.circle} src={Circle} alt="Circle"/>
+        <img className={classes.cross} src={Cross} alt="Cross"/>
       </div>
     < />
   );

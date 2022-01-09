@@ -6,8 +6,6 @@ import ImageSlider from '../../../../globalComponents/ImageSlider/';
 import Review from './components/Review/';
 import ImagePanel from './components/ImagePanel/'
 
-import { default as Circle } from '../../../../global_assets/circle_small.svg';
-
 import TestimonialsLogic from './TestimonialsLogic';
 
 const Testimonials = (props) => {
@@ -68,13 +66,6 @@ const Testimonials = (props) => {
         </div>
 
       </div>
-
-      <div className={classes.decalContainer}>
-        <Animate isMounted={isVisible} type="fade" delay={1000}>
-          <img className={classes.circle} src={Circle} alt="Circle"/>
-        </Animate>
-      </div>
-
     </Container>
   )
 }
